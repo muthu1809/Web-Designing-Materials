@@ -1,0 +1,279 @@
+<p>I am a paragraph, oh yes I am.</p>
+<h1>I am the title of the story.</h1>
+<h2>I am the title of the story.</h2>
+<h3>I am the title of the story.</h3>
+<h4>I am the title of the story.</h4>
+<h5>I am the title of the story.</h5>
+<h6>I am the title of the story.</h6>
+
+
+Unordered List: 
+ul - unordered list
+li - list item
+
+<ul>
+  <li>milk</li>
+  <li>eggs</li>
+  <li>bread</li>
+  <li>hummus</li>
+</ul>
+
+Ordered List:
+<ol>
+  <li>Have pen and paper</li>
+  <li>Note down everything</li>
+  <li>Go through them</li>
+  <li>Ask Questions</li>
+  <li>Clarify your doubts</li>
+</ol>
+
+
+<ol>
+  <li>Have pen and paper</li>
+  <li>Note down everything</li>
+  <li>Go through them</li>
+  <li>Ask Questions
+     <ul>
+      <li>Listen to the answers</li>
+      <li>Raise again your questions on the answers</li>
+    </ul>
+</li>
+  <li>Clarify your doubts</li>
+</ol>
+
+Emphasis: 
+
+<p>It is good to <em>practise</em> regularly and <em>write </em>them.</p>
+
+Underline:
+<p>HTML is <U>easy</U> to learn.</p>
+
+Combine strong, emphasis and underline: 
+<p>HTML is <U><strong><em>easy</strong></em></U> to learn.</p>
+
+Changing closing tag order will also work: [Not advisable]
+<p>HTML is <U><strong><em>easy</U></em></strong> to learn.</p>
+
+Description List: 
+<dl>
+  <dt>ILUGC</dt>
+  <dd>ILUGC was started on 1997 and it is an one of the oldest Linux Users Group in India. We are a heterogeneous group of computer users from the South Indian city of Chennai (aka Madras), united in our use of Free/Libre/Open Source Softwares and support of Software Freedom in general and the GNU/Linux in particular. Most of our monthly meetings see a technical talk, not necessarily on GNU/Linux but also on FSF/GNU/OSS/BSD related topics such as Perl, Python, PHP, FreeBSD, TCP, IP, etc,.</dd>
+  <dt>Kaniyam</dt>
+  <dd><i lang="ta">அறிவியல் மற்றும் சமூகப் பொருளாதார வளர்ச்சிக்கு ஒப்ப, தமிழ் மொழியின் பயன்பாடு வளர்வதை உறுதிப்படுத்துவதும், அனைத்து அறிவுத் தொகுதிகளும், வளங்களும் கட்டற்ற அணுக்கத்தில் அனைவருக்கும் கிடைக்கச்செய்தலும்.</i></dd>
+  <dt>FSFTN</dt>
+  <dd>IFree Software Foundation Tamil Nadu (FSFTN) is a not-for-profit organisation and a social
+movement which aims at enlightening the masses in Free Software, Free Hardware, Openness, Free Culture
+and Knowledge Freedom. We have Regional and College level GLUGs and
+conduct Annual Camps, Workshops, etc on FOSS Technologies and Tools to empower people and contribute Knowledge back to the Commons</dd>
+</dl>
+
+
+Description List - Example 2: 
+
+<dl>
+  <dt><strong>ILUGC</strong></dt>
+  <dd>ILUGC was started on 1997 and it is an one of the oldest Linux Users Group in India. We are a heterogeneous group of computer users from the South Indian city of Chennai (aka Madras), united in our use of Free/Libre/Open Source Softwares and support of Software Freedom in general and the GNU/Linux in particular. Most of our monthly meetings see a technical talk, not necessarily on GNU/Linux but also on FSF/GNU/OSS/BSD related topics such as Perl, Python, PHP, FreeBSD, TCP, IP, etc,.</dd>
+  <dt><strong><em>Kaniyam</em></strong></dt>
+  <dd><i lang="ta">அறிவியல் மற்றும் சமூகப் பொருளாதார வளர்ச்சிக்கு ஒப்ப, தமிழ் மொழியின் பயன்பாடு வளர்வதை உறுதிப்படுத்துவதும், அனைத்து அறிவுத் தொகுதிகளும், வளங்களும் கட்டற்ற அணுக்கத்தில் அனைவருக்கும் கிடைக்கச்செய்தலும்.</i></dd>
+  <dt>FSFTN</dt>
+  <dd>IFree Software Foundation Tamil Nadu (FSFTN) is a not-for-profit organisation and a social
+movement which aims at enlightening the masses in Free Software, Free Hardware, Openness, Free Culture
+and Knowledge Freedom. We have Regional and College level GLUGs and
+conduct Annual Camps, Workshops, etc on FOSS Technologies and Tools to empower people and contribute Knowledge back to the Commons</dd>
+</dl>
+
+Abbreviations: 
+<p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents.</p>
+
+<p>I think <abbr title="Doctor">Dr.</abbr> B.M.Hegde talks are eye opening one.</p>
+
+
+Superscript and subscript: 
+
+<p>Periyar's birthday is on the 17<sup>th</sup> of September.</p>
+<p>Water's formula is H<sub>2</sub>O</sub>.</p>
+<p>If x<sup>2</sup> is 16, x must equal 4 or -4.</p>
+
+
+Marking up times and dates:
+
+<time datetime="2022-06-20">20 June 2022</time>
+
+<time datetime="2022-06-20">20 June 2022</time>
+
+<!-- Standard simple date -->
+<time datetime="2022-01-20">20 June 2022</time>
+<!-- Just year and month -->
+<time datetime="2022-01">June 2022</time>
+<!-- Just month and day -->
+<time datetime="01-20">20 June</time>
+<!-- Just time, hours and minutes -->
+<time datetime="19:30">19:30</time>
+<!-- You can do seconds and milliseconds too! -->
+<time datetime="19:30:01.856">19:30:01.856</time>
+<!-- Date and time -->
+<time datetime="2022-01-20T19:30">7.30pm, 20 June 2022</time>
+<!-- Date and time with timezone offset -->
+<time datetime="2022-01-20T19:30+01:00">7.30pm, 20 June 2022 is 8.30pm in India</time>
+<!-- Calling out a specific week number -->
+<time datetime="2022-W04">The fourth week of 2022</time>
+
+
+HyperLinks: 
+
+<p>I'm creating a link to
+<a href="http://www.kaniyam.com/">Kaniyam Home page</a>.
+</p>
+
+<p>I'm creating a link to
+<a href="http://www.kaniyam.com/"
+   title="The best place to learn Open Source content in Tamil">Kaniyam</a>.
+</p>
+
+Block Level Links: 
+For Adding Links to Images
+
+<a href="https://www.linux.org/">
+  <img src="linux.jpeg" alt="Linux logo that links to the Linux homepage">
+</a>
+
+Creating HyperLinks:
+
+Moving down into subdirectories
+
+Moving back up into parent directories
+
+home.html: 
+----------
+ 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h1>This is Sample homepage</h1>
+
+    <p>Visit my <a href="templates/home.html">Home Page</a>.</p>
+
+    <p>Want to contact a specific staff member? Find details on our <a href="contacts.html">contacts page</a>.</p>
+
+    <p>Want to Reach Us? Use our <a href="contactus.html#Mailing_address">address</a>.</p>
+  </body>
+</html>
+
+contactus.html
+-----------------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My contacts page</title>
+  </head>
+
+  <body>
+    <h1>This is my Contact Us page</h1>
+
+    <p>The <a href="#Mailing_address">company mailing address</a> Please find at the bottom of this page.</p>
+
+    <p>Address</p>
+
+    <h2 id="Mailing_address"></h2>
+
+    <address>7 Vijaya Nagar<br>
+    Velachery<br>
+    Chennai<br>
+    Tamil Nadu, 600042</address>
+  </body>
+</html>
+
+----------------------
+Open Link in New Tab: 
+
+<a href="https://www.mozilla.org" target="_blank">
+</a>
+
+
+Download attribute when linking to a download: 
+
+<a href="https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US"    download="firefox-latest-64bit-installer">
+  Download Latest Firefox for Linux (64-bit) (English, US)
+</a>
+
+
+EMail Link: 
+mailto: link indicates the email address of the intended recipient
+
+<a href="mailto:noone@langscape.com">Send email to No One</a>
+
+<a href="mailto:noone@langscape.com?cc=yarum_illai@kaniyam.com&bcc=nowhere@payilagam.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+  Send mail with cc, bcc, subject and body
+</a>
+
+
+HTML Validator: 
+https://validator.w3.org/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
