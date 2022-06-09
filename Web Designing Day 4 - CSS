@@ -1,0 +1,595 @@
+CSS - Cascading Style Sheet
+
+To add styles to HTML.  
+Styling --> Adding Colors, Fonts, Size, Borders, etc. 
+
+CSS is not a programming language. It's not a markup language either.
+
+CSS is a Style Sheet Language. CSS is a rule-based language.   
+
+How To Define Style for HTML Elements:
+1. In line
+<h1 style="color:red"> வணக்கம் <h1> 
+
+2. By Using Style Tag: 
+<html>
+<head>
+<style type="text/css">
+h1{
+    color: blue;
+  }
+</style>
+</head>
+<h1> வணக்கம் தமிழகம் </h1> 
+இது பரிந்துரைக்கப்படுவதில்லை.  ஏனென்றால் ஒவ்வொரு html கோப்புக்கும் இதைத் திரும்பச் செய்ய வேண்டி வரும்.  
+
+3. தனி CSS கோப்பு(File): 
+
+style1.css
+----------
+h1{color:red;}
+
+index.html:
+-----------
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css">
+</head>
+<h1> வணக்கம் தமிழகம் </h1> 
+
+Basic Structure of CSS File:
+============================
+tagname{
+    property:value;
+   }
+eg: 
+h1{color:red;}
+
+CSS Fileஐ HTML கோப்புடன் link tag மூலம் இணைக்கலாம்.  
+
+CSSஇல் comments: 
+/* Comments */
+
+h1 {
+    color: red;
+    font-size: 5em;
+}
+
+p {
+    color: black;
+}
+
+Multiple Property Values: 
+style1.css
+----------
+p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
+
+Selecting Multiple Elements: 
+
+style1.css
+-----------
+p,h1 {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
+index.html:
+----------
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css">
+</head>
+<body>
+<h1> வணக்கம் தமிழகம் </h1> 
+<p> வணக்கம் தமிழகம் </p> 
+</body>
+</html>
+
+CSS Selectors: 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  color: red;
+} 
+</style>
+</head>
+<body>
+
+<p>எல்லாப் பத்திக்கும்(paragraph) </p>
+<p id="para1">இந்த style</p>
+<p>பொருந்தும்</p>
+
+</body>
+</html>
+
+1. ID Selector: 
+index.html: 
+-----------
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#para1 {
+  text-align: center;
+  color: blue;
+}
+</style>
+</head>
+<body>
+<p id="para1">நான் மாறியிருக்கிறேனா?</p>
+<p>நான் மாறவில்லையா?</p>
+​</body>
+</html>
+குறிப்பு: id எண்ணில் தொடங்கக் கூடாது.  
+
+2. Class Selector:
+------------------
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.abcd {
+  text-align: center;
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h1 class="abcd">காற்றுக்கென்ன வேலி</h1>
+<p class="bcde">கடலுக்கென்ன மூடி</p> 
+</body>
+</html>
+
+குறிப்பு: styleஇல் class பெயருக்கு முன்னால் புள்ளி(.) வைக்க வேண்டும்.  
+
+2.1 More than One Class: 
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p.center {
+  text-align: center;
+  color: red;
+}
+
+p.large {
+  font-size: 300%;
+}
+</style>
+</head>
+<body>
+<h1 class="center">நான் மாறவே இல்லையே</h1>
+<p class="center">நான் நடுவில் வந்திருக்கிறேன்</p>
+<p class="center large">எல்லாம் மாறியிருக்கிறதா?</p> 
+</body>
+</html>
+
+3. Universal Selector: 
+-------------------------
+Universal Selector: * 
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  text-align: center;
+  color: red;
+}
+</style>
+</head>
+<body>
+<h1>வணக்கம்</h1>
+<p>சிவப்பு</p>
+<p id="para1">சிவப்புத் தான்</p>
+<p>இங்கேயும் சிவப்புத் தான்</p>
+</body>
+</html>
+
+4. CSS Attribute Selector: 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a[target] {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+<h2>CSS [attribute] Selector</h2>
+<p>பின்னணி மஞ்சளாக எங்கெல்லாம் மாறுகிறது, பாருங்கள். </p>
+<a href="https://www.kaniyam.com">Kaniyam</a>
+<a href="http://www.ilugc.in" target="_blank">ILUGC</a>
+<a href="http://www.wikipedia.org" target="_blank">Wikipedia</a>
+</body>
+</html>
+
+4.1. CSS Attribute Selector
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+[title~=linux] {
+  border: 5px solid red;
+}
+</style>
+</head>
+<body>
+
+<h2>[attribute~="value"] ஸ்டைல் டேக்கைப் பாருங்கள்</h2>
+<p>attribute (இங்கே title)ஐப் பொருத்து ஸ்டைல் மாறுகிறதா</p>
+
+<img src="rabbit.jpeg" title="animal" width="150" height="113">
+<img src="linux.jpeg" title="linux" width="224" height="162"> 
+<img src="linux.jpeg" title="logo of linux" width="150" height="113">
+
+</body>
+</html>
+
+
+4.2. CSS Attribute Selector
+| கொடுத்திருக்கும் classஐ அப்படியே தேடும், இல்லை, - உடன் தேடும்.  
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+[class|=top] {
+  background: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute|="value"] Selector</h2>
+
+<h1 class="top-header">கனவா கனவா</h1>
+<p class="top-text">நான் காண்பது கனவா</p>
+<p class="topcontent">என் கண் முன்னே கடவுள் துகளா</p>
+
+</body>
+</html>
+
+
+4.2. CSS Attribute Selector
+| கொடுத்திருக்கும் classஐ அப்படியே தேடும், இல்லை, - உடன் தேடும்.  
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+[class|=top] {
+  background: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute|="value"] Selector</h2>
+
+<h1 class="top-header">கனவா கனவா</h1>
+<p class="top-text">நான் காண்பது கனவா</p>
+<p class="topcontent">என் கண் முன்னே கடவுள் துகளா</p>
+
+</body>
+</html>
+
+
+4.3. CSS [attribute^="value"] Selector
+-----------
+class^ ---> starts with specified value
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+[class^="abc"] {
+  background: pink;
+}
+</style>
+</head>
+<body>
+
+<h1>CSS [attribute^="abcd"] Selector</h1>
+
+<p class="abcd">ரெண்டு ஒன்னு பாக்கலாம் நிக்குறியா தெம்பா </p>
+<h1 class="bcde-123">எப்பவும் லைஃப் திரும்பலாம் </h1>
+<p class="abcdefgh">நம்புறியா நண்பா</p>
+
+</body>
+</html>
+
+4.4. CSS [attribute$="value"] Selector
+--------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+[class$="xyz"] {
+  background: pink;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute$="value"] Selector</h2>
+
+<div class="abc_xyz">ரிஸ்க் எடுக்கறதெல்லாம் ரஸ்க் சாப்பிடறது மாதிரி</div>
+<div class="abc">வேணா வலிக்குது அழுதுறுவேன்.</div>
+<div class="stuvwxyz">நான் அப்டியே ஷாக் ஆயிட்டேன்</div>
+<p class="abc-xyz">எந்த ஒரு விசயத்தையும் பிளான் பண்ணாம பண்ணா இப்படித்தான்!  பிளான் பண்ணி பண்ணனும்</p>
+
+</body>
+</html>
+
+4.5. CSS [attribute*="value"] Selector
+---------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+[class*="xy"] {
+  background: pink;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute*="value"] Selector</h2>
+
+<div class="abc_xyz_1">ரிஸ்க் எடுக்கறதெல்லாம் ரஸ்க் சாப்பிடறது மாதிரி</div>
+<div class="xyabz">வேணா வலிக்குது அழுதுறுவேன்.</div>
+<div class="stuvwxyz_">நான் அப்டியே ஷாக் ஆயிட்டேன்</div>
+<p class="aby-xz">எந்த ஒரு விசயத்தையும் பிளான் பண்ணாம பண்ணா இப்படித்தான்!  பிளான் பண்ணி பண்ணனும்</p>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+[class*="xy"] {
+  background: pink;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS [attribute$="value"] Selector</h2>
+
+<div class="abc_xyz_1">ரிஸ்க் எடுக்கறதெல்லாம் ரஸ்க் சாப்பிடறது மாதிரி</div>
+<div class="xyabz">வேணா வலிக்குது அழுதுறுவேன்.</div>
+<div class="stuvwxyz_">நான் அப்டியே ஷாக் ஆயிட்டேன்</div>
+<p class="aby-xz">எந்த ஒரு விசயத்தையும் பிளான் பண்ணாம பண்ணா இப்படித்தான்!  பிளான் பண்ணி பண்ணனும்</p>
+
+</body>
+</html>
+
+CSS Combinators: 
+----------------
+5.1 Descendant Selector
+-----------------------
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div p {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>Descendant Selector</h2>
+<div>
+  <p>நான் p, div இரண்டிற்குள்ளும் இருக்கிறேன்.  எனவே எனக்கு style பொருந்தும்.  </p>
+  <p>நானும் p, div இரண்டிற்குள்ளும் இருக்கிறேன்.  எனவே எனக்கு style பொருந்தும். </p>
+  <section><p>நானும் தான் p, div இரண்டிற்குள்ளும் இருக்கிறேன்.  எனவே எனக்கு style பொருந்தும்.</p></section>
+</div>
+
+<p>நான் pஇல் மட்டும் தான்  இருக்கிறேன்.  எனவே எனக்கு style பொருந்தாது. </p>
+<p>நான் pஇல் மட்டும் தான்  இருக்கிறேன்.  எனவே எனக்கு style பொருந்தாது.</p>
+
+</body>
+</html>
+
+5.2. Child Selector (>) 
+----------------------
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div > p {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<h2>Descendant Selector</h2>
+<div>
+  <p>நான் p, div இரண்டிற்குள்ளும் இருக்கிறேன்.  எனவே எனக்கு style பொருந்தும்.  </p>
+  <p>நானும் p, div இரண்டிற்குள்ளும் இருக்கிறேன்.  எனவே எனக்கு style பொருந்தும். </p>
+  <section><p>நானும் தான் p, div இரண்டிற்குள்ளும் இருக்கிறேன். ஆனால், sectionகுள் இருக்கிறேன்.   style பொருந்தாது.</p></section>
+</div>
+
+<p>நான் pஇல் மட்டும் தான்  இருக்கிறேன்.  எனவே எனக்கு style பொருந்தாது. </p>
+<p>நான் pஇல் மட்டும் தான்  இருக்கிறேன்.  எனவே எனக்கு style பொருந்தாது.</p>
+
+</body>
+</html>
+
+5.3. nth of type selectors:
+--------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+/* Selects the second element of div siblings */
+div:nth-of-type(2) {
+  background: red;
+  color: yellow;
+}
+
+/* Selects the second li element in a list */
+li:nth-of-type(2) {
+  background: lightgreen;
+  color: red;
+}
+
+/* Selects every third element among any group of siblings */
+:nth-of-type(3) {
+  background: yellow;
+}
+</style>
+</head>
+<body>
+
+<div>
+<p>நம்பிக்கையே நல்லது</p>
+</div>
+
+<div>
+<p>எறும்புக்கும் வாழ்க்கை உள்ளது</p>
+</div>
+
+<div>
+<p>பெருந்தலைகள்</p>
+</div>
+
+<ul>
+  <li>ரிச்சர்டு ஸ்டால்மேன்</li>
+  <li>முத்து அண்ணாமலை</li>
+  <li>லினஸ் டார்வால்ட்ஸ்</li>
+  <li>டென்னிஸ் ரிட்சி</li>
+  <li>ஜிம்மி வேல்ஸ்</li>
+</ul>
+
+</body>
+</html>
+
+--------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+​
+
+​
+
+​
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
