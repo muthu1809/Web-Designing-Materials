@@ -1,0 +1,402 @@
+<link rel="icon" type="image/x-icon" href="linux.jpeg"> <!-- இங்கே .ico file கொடுப்பார்கள் --> 
+
+
+https://favicon.io/
+
+https://www.favicon-generator.org/
+
+
+
+<p> Hi, I'm from <mark>Chennai </mark></p>
+
+
+<img src="linux.jpeg"
+     alt="Tux the Penguin">
+
+
+<img src="linx.jpeg"
+     alt="Tux the Penguin">
+
+<img src="linux.jpeg"
+     alt="Tux The Penguin"
+     width="400"
+     height="341">
+
+
+<img src="linux.jpeg"
+     alt=""
+     width="400"
+     height="341"
+     title="Tux is a penguin character and the official brand character of the Linux kernel.">
+
+<figure>
+  <img src="linux.jpeg"
+       alt="Tux is a penguin character and the official brand character of the Linux kernel."
+       width="400"
+       height="341">
+
+  <figcaption>Linux Logo - Tux</figcaption>
+</figure>
+
+Video and audio on the web: 
+<video src="rabbit.webm" controls>
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit.webm">link to the video</a> instead.</p>
+</video>
+
+
+<video controls>
+  <source src="rabbit.mp4" type="video/mp4">
+  <source src="rabbit.webm" type="video/webm">
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit.mp4">link to the video</a> instead.</p>
+</video>
+
+<video controls width="400" height="400"
+       autoplay loop muted preload="auto" 
+       poster="rabbit.jpeg">  <!-- try preload="none" --> 
+  <source src="rabbit.mp4" type="video/mp4">
+  <source src="rabbit.webm" type="video/webm">
+  <p>Your browser doesn't support HTML video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+</video>
+
+<audio controls>
+  <source src="viper.mp3" type="audio/mp3">
+  <source src="viper.ogg" type="audio/ogg">
+  <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+</audio>
+
+Embedding Technologies: 
+<iframe> Embedding an entire web document inside another one
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31100.014332286864!2d80.22096644999999!3d13.003685749999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc0605297cdd52a98!2z4K6q4K6v4K6_4K6y4K6V4K6u4K-N!5e0!3m2!1sta!2sin!4v1654616701684!5m2!1sta!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/g4VubmbY5So" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Courtesy: Chris David Mills 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Iframe with basic details</title>
+  </head>
+  <body>
+    <h1>Iframe with basic details</h1>
+
+    <iframe src="https://developer.mozilla.org/en-US/docs/Glossary" width="100%" height="500" frameborder="0" allowfullscreen sandbox>
+      <p> <a href="https://developer.mozilla.org/en-US/docs/Glossary"> Fallback link for browsers that don't support iframes </a> </p>
+    </iframe>
+  </body>
+</html>
+
+Browser Developer Tools: 
+Shortcut: Ctrl+Shift+I or F12
+
+https://en.wikipedia.org/wiki/Sandbox_(computer_security)
+
+https://ta.wikipedia.org/wiki/%E0%AE%AA%E0%AE%AF%E0%AE%A9%E0%AE%B0%E0%AF%8D:Info-farmer/%E0%AE%AE%E0%AE%A3%E0%AE%B2%E0%AF%8D%E0%AE%A4%E0%AF%8A%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%BF 
+
+Clickjacking
+
+Clickjacking is an interface-based attack that tricks website users into unwittingly clicking on malicious links. In clickjacking, the attackers embed their malicious links into buttons or legitimate pages in a website. In an infected Site, whenever a user clicks on a legitimate link, the attacker gets the confidential information of that user, which ultimately compromises the user's privacy on the Internet.
+
+Courtesy: https://developer.mozilla.org/en-US/docs/Glossary/Clickjacking
+
+HTTPS: 
+https://letsencrypt.org/
+
+
+Vector Graphics: 
+
+Images should not pixelate when we zoom them.  
+
+Two Types of Images: 
+1. Raster Images
+2. Vector Images
+
+Raster Images: 
+Raster images are defined using a grid of pixels. 
+Eg. .bmp, .png, .jpg, .gif
+
+Vector Images: 
+SVG[Scalable Vector Graphics] Format Images (.svg). 
+It is an XML-based language for describing vector images
+
+
+https://mdn.github.io/learning-area/html/multimedia-and-embedding/adding-vector-graphics-to-the-web/vector-versus-raster.html 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vector versus raster</title>
+  </head>
+  <body>
+    <h1>Vector versus raster</h1>
+
+    <img src="star.png" alt="A raster star">
+    <img src="star.svg" alt="A vector star">
+  </body>
+</html>
+
+
+<svg width="300" height="200">
+    <rect width="100%" height="100%" fill="green" />
+</svg>
+
+
+Responsive Images: 
+CSS உடன் பேசுவோம்.  
+
+span Tag: 
+div tag: 
+
+
+Table Creation: 
+
+<table>
+<td>first cell.</td>
+</table>
+
+
+<table> 
+<td>first cell</td>
+<td>second cell</td>
+<td>third cell</td>
+<td>fourth cell</td>
+</table>
+
+<table> 
+<tr>
+<td>first cell</td>
+<td>second cell</td>
+<td>third cell</td>
+<td>fourth cell</td>
+</tr>
+</table>
+
+
+<table> 
+<tr>
+<th>first heading</th>
+<th>second heading</th>
+<th>third heading</th>
+<th>fourth heading</th>
+</tr>
+<td>first cell</td>
+<td>second cell</td>
+<td>third cell</td>
+<td>fourth cell</td>
+</tr>
+</table>
+
+
+<table>
+  <caption>Monthly Electricity Bill</caption>
+  <tr>
+    <th>Month</th>
+    <th>Units</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>50</td>
+  </tr>
+</table>
+
+
+<table>
+  <colgroup>
+    <col span="2" style="background-color:blue">
+    <col style="background-color:red">
+  </colgroup>
+  <tr>
+    <th>Publisher</th>
+    <th>Title</th>
+    <th>Link</th>
+  </tr>
+  <tr>
+    <td>Kaniyam</td>
+    <td>CSS in Tamil</td>
+    <td><a href="http://www.kaniyam.com/download/learn-css-in-tamil.pdf/"> எளிய தமிழில் CSS</a></td>
+  </tr>
+  <tr>
+    <td>Kaniyam</td>
+    <td>JavaScript in Tamil</td>
+    <td><a href="https://freetamilebooks.com/download/%e0%ae%8e%e0%ae%b3%e0%ae%bf%e0%ae%af-%e0%ae%a4%e0%ae%ae%e0%ae%bf%e0%ae%b4%e0%ae%bf%e0%ae%b2%e0%af%8d-javascript-a4-pdf/"> எளிய தமிழில் ஜாவாஸ்கிரிப்ட்</a></td>
+  </tr>
+</table>
+
+Nested Table:
+
+<table id="table1">
+  <tr>
+    <th>title1</th>
+    <th>title2</th>
+    <th>title3</th>
+  </tr>
+  <tr>
+    <td id="nested">
+      <table id="table2">
+        <tr>
+          <td>cell1</td>
+          <td>cell2</td>
+          <td>cell3</td>
+        </tr>
+      </table>
+    </td>
+    <td>cell2</td>
+    <td>cell3</td>
+  </tr>
+  <tr>
+    <td>cell4</td>
+    <td>cell5</td>
+    <td>cell6</td>
+  </tr>
+</table>
+
+Check Boxes: 
+<h1>Check the Course you wish</h1>
+<label class="container">Java
+  <input type="checkbox" checked="checked">
+  
+</label>
+<label class="container">Python
+  <input type="checkbox" id="P" >
+
+</label>
+<label class="container">Angular
+  <input type="checkbox" id="A" >
+
+</label>
+<label  class="container">
+	React
+<input type="checkbox" >
+
+</label>
+
+
+Radio Buttons: 
+<input type="radio" id="html" name="fav_language" value="HTML"> HTML
+<label for="html"><h2>HTML</h2></label>
+<input type="radio" id="css" name="fav_language" value="CSS">
+<label for="css"><h2>CSS</h2></label>
+<input type="radio" id="javascript" name="fav_language" value="JavaScript">
+<label for="javascript"><h2>JavaScript</h2></label> 
+
+
+Input Box - Password: 
+
+  <input type="text" id="fname" name="fname" value="Kathir"><br>
+  <label for="lname"><h3>Password:</h3></label><br>
+  <input type="password" id="lname" name="lname" value="Kumaran"><br><br>
+	
+
+
+Drop Down / Select Box
+
+	<label for="courses"><h2>Choose Course</h2></label>
+
+	<!--<select id="courses" name="courses">-->
+	<!--<select id="courses" name="courses" size="3">-->
+<select id="courses" name="courses" size="4" multiple>
+  <option value="java"  >Java </option>
+  <option value="python" selected>Python</option>
+  <option value="ruby">Ruby</option>
+  <option value=".net">.NET</option>
+</select> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
