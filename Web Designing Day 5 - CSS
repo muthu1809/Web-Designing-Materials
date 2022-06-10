@@ -1,0 +1,371 @@
+Text: 
+color   --> "#ff0000", "rgb(0,255,0)", "red"
+text-align  --> Left, Right, center, Justify
+text-decoration --> linkஇல் அடிக்கோட்டை எடுக்க
+text-transform  --> uppercase, lowercase, Capitalize
+text-indent     --> இடைவெளி அமைக்க உதவும். 
+index.html
+----------
+<html> 
+<head> 
+<link rel="stylesheet" href="styles/style1.css"> 
+</head> 
+<body> 
+<p class="first"> Dont Giveup! Keep on Trying! </p>
+<p class="second">Even through it seems to be impossible, It will happen in your life one day. </p>
+<p class="third"> All the very best Friends! Wait to receive the surprises in your life!!!!!!</p>
+</body> 
+</html> 
+
+style1.css
+-----------
+p.first 
+{color:green; text-decoration:overline; text-transform:uppercase; text-indent:50px;}
+p.second 
+{color:#0000ff; text-align:right; text-decoration:line-through; text-transform:lowercase;}
+p.third
+{color:rgb(255,0,0); text-align:center; text-decoration:underline; text-decoration:capitalize;}
+
+-------------
+Font: 
+font-family - எழுத்துகளின் வகை, பல எழுத்து வகையைக் குறிப்பிடலாம்.  முதல் மதிப்பு இல்லையெனில் இரண்டாவது வகையிலும், இரண்டாவதும் இல்லையெனில் 3-வது வகையிலும் எழுத்துக்களை வெளிப்படுத்தும்.
+font-style :    Normal, Italic, Bold, Oblique
+
+font-size: px, em
+
+index.html: 
+----------
+<html> 
+<head> 
+<link rel="stylesheet" href="styles/style1.css"> 
+</head> 
+<body> 
+<p class="first"> விடாமுயற்சி தொடர்பயிற்சி </p>
+<p class="second"> எங்கே விழுந்தாய் என்று பார்க்காதே!  எங்கே வழுக்கியது என்று பார்!  </p>
+<p class="third"> தொடக்கத்தில் எல்லாமே கடினம் தான்!  தொடர்ந்து செய்தால் எதுவும் எளிமை தான்!</p>
+</body> 
+</html> 
+
+
+style1.css
+-----------
+
+p.first {font-family:"Tiems New Roman", Times, serif; font-style:Oblique; font-size:10;}
+p.second {font-style:italic; font-size:20;}
+p.third {font-style:bold; font-size:30;}
+
+--------------
+Link: 
+ஒரு linkஐ அழகுபடுத்த color, font-family, font size கொடுக்கலாம்.  
+
+a:link =
+a:hover = 
+a:active = சொடுக்கும் போது எப்படித் தெரிய வேண்டும்.  
+a:visited = சொடுக்கிய பிறகு எப்படித் தெரிய வேண்டும்.  
+
+index.html
+------------
+<html>
+<head> 
+<link rel="stylesheet" href="styles/style1.css"> 
+</head> 
+<body> 
+<a href="https://freetamilebooks.com/ebooks/eliya_tamilil_software_testing/" target="_blank"> Click here for Software Testing book </a>
+</body> 
+</html> 
+
+style1.css
+-----------
+a:hover {color:red;background-color:yellow;}
+a:active {color:white;background-color:black;}
+
+
+-----------
+List: 
+Ordered List என்றால் 1,2,3
+Unordered List என்றால் புள்ளிகள் 
+
+CSS மூலம் அவற்றை மாற்றலாம்.  
+index.html
+----------
+<html>
+<head> 
+<link rel="stylesheet" href="styles/style1.css"> 
+</head> 
+<body> 
+Types of Testing
+<ol>
+<li>Functional Testing</li>
+<li>Non-functional Testing</li>
+</ol>
+
+Types of non-functional testing
+<ul>
+<li>Performance Testing</li>
+<li>Automation Testing</li>
+</ul>
+
+</body> 
+</html> 
+
+style.css
+---------
+ol li {list-style-type:upper-roman;}
+ol li {list-style-type:circle;}
+
+
+Visibility  Property: 
+தெரிய வேண்டுமா இல்லையா? எனச் சொல்லும்.  
+Display: 
+inline என இருந்தால், அடுத்தடுத்த வரியில் இல்லாமல் தொடர்ச்சியாக வெளிப்படும்.  
+style.css:
+----------
+ol li {visibility: hidden;}
+ol li {display: inline;}
+
+TABLES: 
+-------
+<html>
+<head> 
+<link rel="stylesheet" href="styles/style1.css"> 
+</head> 
+<body> <table>
+
+<tr>
+<th>Name</th>
+<th>Marks</th>
+<th>Rank</th>
+</tr>
+
+<tr>
+<th>கதிர்</th>
+<th>450</th>
+<th>தேர்ச்சி</th>
+</tr>
+
+<tr>
+<th>வெண்பா</th>
+<th>445</th>
+<th>தேர்ச்சி</th>
+</tr>
+
+</table></body> 
+</html> 
+
+style1.css
+----------
+
+table {width:"60%"; height: "40%"; border: 3px solid red;}
+th {border: 2px solid green;}
+td {border: 1px solid orange;}
+
+இதே CSS கோப்பில்: 
+table {width:60%; width:40%; border: 3px solid red; border-collapse: collapse;} 
+
+
+Divisions: 
+
+<html>
+<head> 
+<html>
+<head> 
+<link rel="stylesheet" href="styles/style1.css"> 
+</head> 
+<body> <div>பத்தாவது முறை விழுந்தவனை முத்தமிட்டுச் சொன்னது பூமி - ஒன்பது முறை எழுந்தவன் அல்லவா நீ!  - ஈரோடு தமிழன்பன் </div>
+</body> 
+</html> 
+
+style1.css
+----------
+div {width:60%; height: 40%; border: 3px solid red; }
+
+இதே style.css கோப்பில் margin சேர்த்து வேறுபாட்டைக் கவனிக்கவும். 
+
+div {width:60%; height: 40%; border: 3px solid red; margin:25px; } 
+
+padding: உள்ளே இருக்கும் contentக்கும் இடைவெளி கொடுக்கும்.  
+style1.css
+
+div {width:60%; height: 40%; border: 3px solid red; margin:25px;padding: 25px; }
+
+Body background: 
+index.html: 
+<html>
+<head> 
+<html>
+<head> 
+<link rel="stylesheet" href="styles/style1.css"> 
+</head> 
+<body> <div>பத்தாவது முறை விழுந்தவனை முத்தமிட்டுச் சொன்னது பூமி - ஒன்பது முறை எழுந்தவன் அல்லவா நீ!  - ஈரோடு தமிழன்பன் </div>
+</body> 
+</html> 
+
+style1.css:
+body {background-color: skyblue;}
+
+படத்தைச் சேர்ப்பது எப்படி?
+body {background-image: url("../linux.jpeg");}
+
+body {
+background-image: url("../linux.jpeg");
+background-repeat: repeat-x;
+}
+
+body {
+background-image: url("../linux.jpeg");
+background-repeat: no-repeat;
+}
+
+body {
+background-image: url("../linux.jpeg");
+background-repeat: no-repeat;
+background-position: right top;
+}
+
+POSITIONING: 
+index.html: 
+----------
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</style>
+</head>
+<body>
+
+<h2>position: static;</h2>
+<body> <div class="static">பத்தாவது முறை விழுந்தவனை முத்தமிட்டுச் சொன்னது பூமி - ஒன்பது முறை எழுந்தவன் அல்லவா நீ!  - ஈரோடு தமிழன்பன் </div>
+</body> 
+</html> 
+
+style1.css:
+div.static {
+  position: static;
+  border: 3px solid #73AD21;
+}
+
+style1.css:
+ div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+}
+
+div.absolute {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+}
+
+sticky
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+span {
+  color: red;
+  border: 1px solid black;
+}
+
+.extra span {
+  color: inherit;
+}
+</style>
+</head>
+<body>
+
+<div>
+  Here is <span>a span element</span> which is red, as it is span element
+</div>
+
+<div class="extra" style="color:blue">
+  Here is <span>a span element</span> which is blue, because it inherits from its parent.
+</div>
+
+<div style="color:red">
+  Here is <span>a span element</span> which is red, as it is span element
+</div>
+
+</body>
+</html>
+
+----------
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+  color: red;
+  border: 1px solid blue; 
+}
+
+h1 {
+  color: initial; 
+}
+</style>
+</head>
+<body>
+
+<div>
+  <h1 align="center">தலைப்பு</h1>
+  <p>தலைப்பின் நிறம் என்ன?  இந்தப் பத்தியின் நிறம் என்ன?  ஏன் இரண்டும் வெவ்வேறு?  initial property தான் காரணம்.  புரிகிறதா?.</p>
+</div>
+</body>
+</html>
+
+------------
+revert property: 
+.பெற்றோர் {
+  color: blue;
+}
+p {
+  color: red;
+}
+.மாற்று {
+  color: revert;
+}
+
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css">
+</head>
+<body>
+<div class="பெற்றோர்">
+  <p>கண்ணைக் கசக்கும் சூரியனோ ரெட்.</p>
+  <p class="மாற்று">ஊதா ஊதா ஊதாப்பூ</p>
+</div>
+</body>
+</html>
+
+---------------
+
+CSS - Source Order: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
