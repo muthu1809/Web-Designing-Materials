@@ -1,0 +1,368 @@
+CSS  TRANSITIONS:
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</head>
+<body>
+<h1>Transition Property</h1>
+<p>சுட்டெலியைப் பச்சைப் பெட்டி மீது நகர்த்துங்கள் [hover]</p>
+	<div><h1> Sasikala</h1> </div>
+</body>
+</html>
+
+style1.css: 
+------------
+div {
+  width: 10px;
+  height: 100px;
+  background: green;
+  transition: width 2s;
+  /* transition-delay: 1s; */ முயன்று பாருங்கள்.  
+}
+
+div:hover {
+  width: 200px;
+}
+
+மேல் உள்ளதை 
+div:hover {
+  width: 200px;
+  height: 200px;
+}
+என்று மாற்றிப் பாருங்கள்.  
+
+style1.css
+----------
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, height 2s, transform 2s;
+}
+
+div:hover {
+  width: 300px;
+  height: 300px;
+  transform: rotate(360deg);
+}
+
+CSS Buttons: 
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</head>
+<body>
+<h2>CSS Buttons</h2>
+
+<button>Default Button</button>
+<a href="https://payilagam.com" class="button">Visit Payilagam</a>
+<button class="button">Button</button>
+<input type="button" class="button" value="Input Button">
+
+</body>
+</html>
+
+style1.css: 
+.button {
+  background-color: brown;
+  border: none;
+  border-radius: 100%;/* 4px 8px 16px 32px வட்டமாக வேண்டுமெனில் 25% 50% 100% */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* hover பண்பைச் சேருங்கள் */
+.button:hover {
+  background-color: blue;
+  color: white;
+}
+
+
+
+CSS Media Queries: 
+
+
+Multiple Column Layout: 
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</head>
+<body>
+<h1>Create Multiple Columns</h1>
+<div class="newspaper">
+உங்களுக்கு பிடித்தமான கட்டற்ற மென்பொருளுக்கு பங்களியுங்கள். ஒரு வரி நிரல் தந்தாலும் அது பெரிய விஷயமே. நிரல் மட்டுமின்றி ஆவணமாக்கம், படம், IRC, Forum, Mailing list ஆகியவற்றில் உதவி, Packaging, பரப்புரை செய்தல், மொழிமாற்றம் செய்தல் என ஏதாவது ஒரு வகையில் பங்களியுங்கள். “How to contribute to Open Source Software?” என்று தேடுங்கள். பிடித்த மொழியில், பிடித்த மென்பொருளுக்கு உதவுங்கள்.
+</div>
+</body>
+</html>
+
+style1.css
+-----------
+.newspaper {
+  column-count: 3;
+}
+
+கீழ் உள்ளது போல, style1.cssஐ மாற்றிப் பாருங்கள். 
+
+.newspaper {
+  column-count: 3;
+column-width: 300px;
+}
+
+style1.css கோப்பில் column-gap: 40px; சேர்த்துப் பாருங்கள்.  
+
+style1.css கோப்பில் column-rule-style: solid;சேர்த்துப் பாருங்கள். 
+
+style1.css கோப்பில் column-rule-color: lightblue; சேர்த்துப் பாருங்கள். 
+
+style1.css கோப்பில் column-rule: 4px dotted rgb(79, 185, 227); சேர்த்துப் பாருங்கள். 
+
+
+Multiple Column Layout: 
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</head>
+<body>
+<h1>கணினி மாணவர்கள் வேலை தேடுவது எப்படி?</h1>
+<div class="newspaper">
+உங்களுக்கு பிடித்தமான கட்டற்ற மென்பொருளுக்கு பங்களியுங்கள். ஒரு வரி நிரல் தந்தாலும் அது பெரிய விஷயமே. நிரல் மட்டுமின்றி ஆவணமாக்கம், படம், IRC, Forum, Mailing list ஆகியவற்றில் உதவி, Packaging, பரப்புரை செய்தல், மொழிமாற்றம் செய்தல் என ஏதாவது ஒரு வகையில் பங்களியுங்கள். “How to contribute to Open Source Software?” என்று தேடுங்கள். பிடித்த மொழியில், பிடித்த மென்பொருளுக்கு உதவுங்கள்.
+</div>
+</body>
+</html>
+
+style1.css
+----------
+.newspaper {
+  column-count: 3;
+column-width: 200px;
+column-rule-style: dotted;
+column-rule-color: red;
+}
+
+h1 {
+  column-span: all;
+}
+
+Columns and Fragmentation: 
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</head>
+<body>
+<h1>கணினி மாணவர்கள் வேலை தேடுவது எப்படி?</h1>
+<div class="container">
+<div class="content">
+உங்களுக்கு பிடித்தமான கட்டற்ற மென்பொருளுக்கு பங்களியுங்கள். ஒரு வரி நிரல் தந்தாலும் அது பெரிய விஷயமே. நிரல் மட்டுமின்றி ஆவணமாக்கம், படம், IRC, Forum, Mailing list ஆகியவற்றில் உதவி, Packaging, பரப்புரை செய்தல், மொழிமாற்றம் செய்தல் என ஏதாவது ஒரு வகையில் பங்களியுங்கள். “How to contribute to Open Source Software?” என்று தேடுங்கள். பிடித்த மொழியில், பிடித்த மென்பொருளுக்கு உதவுங்கள்.
+</div>
+<div class="content">
+எனதருமை சச்சின்களே. 50களையும் 100களையும் சச்சின் குவித்தது போல, மென்பொருட்களை உருவாக்கி, கட்டற்ற மென்பொருட்களுக்கு பங்களித்து, உங்கள் திறமையால், சுடர்விடும் சூரியனாய் மிளிருங்கள்.
+</div>
+</div>
+</body>
+</html>
+
+style1.css
+----------
+.container {
+  column-width: 250px;
+  column-gap: 20px;
+}
+
+.content {
+  background-color: rgb(207, 232, 220);
+  border: 2px solid rgb(79, 185, 227);
+  padding: 10px;
+  margin: 0 0 1em 0;
+}
+
+
+RESPONSIVE DESIGN: 
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</head>
+<body>
+
+<h1>Demo of the ::after selector</h1>
+
+<p>வணக்கம் இது முதல் வரி</p>
+<p>வரிக்குப் பின்னால் நான் இருக்கிறேன்</p>
+
+</body>
+</html>
+
+style1.css: 
+---------
+p::after { 
+  content: " - ஒவ்வொரு வரிக்குப் பின்னேயும்";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</head>
+<body>
+
+<div class="header">
+  <h1>சாவித்திரிபாய் புலே</h1>
+</div>
+
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    <ul>
+      <li>இளமைக்காலம்</li>
+      <li>கல்விப்பணி</li>
+      <li>பிற பணிகள்</li>
+      <li>சிறப்பு</li>
+    </ul>
+  </div>
+
+  <div class="col-6 col-s-9">
+    <h1> சாவித்திரிபாய் </h1>
+    <h2>சாவித்திரிபாய் புலே (Savitribai Jyotirao Phule, 3 சனவரி 1831 – 10 மார்ச் 1897) ஒரு சமூக சீர்திருத்தவாதியும், கவிஞரும் ஆவார். இவர் இந்தியாவின் முதல் பெண் ஆசிரியர் என அழைக்கப்படுகிறார். </h2>
+  </div>
+
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>பிறப்பு
+      <p>சனவரி 3, 1831</p>
+		  <h2>பெண்களுக்கான முதல் பள்ளி</h2> 
+      <h3>பூனாவிற்கருகிலுள்ள பிடெ வாடாவில் 1848 ஆம் ஆண்டு </h3>
+		  <h2>இறப்பு</h2> 
+      <p>மார்ச்சு 10, 1897</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
+
+</body>
+</html>
+
+style1.css
+------------
+* { /* Universal Selector: */ 
+  box-sizing: border-box;
+}
+/* ஒரு elementஇற்கு அதன் width, heightஇல் padding, border சேர்க்க  box-sizing property உதவுகிறது.*/ 
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
