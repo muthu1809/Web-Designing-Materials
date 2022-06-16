@@ -1,0 +1,105 @@
+Hoverable Drop Down: 
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/style1.css"> 
+</head>
+<body>
+
+<h2>Hoverable Dropdown</h2>
+<p>சுட்டெலியைக் கீழ் உள்ள வார்த்தை மீது நகர்த்துங்கள்.</p>
+
+<div class="dropdown">
+  <span>என் மீது</span>
+  <div class="dropdown-content">
+  <p>நான் தான் Hoverable Content</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+style1.css:
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  }
+  
+Text Shadowing:
+.dropdown-content பகுதிக்குள் 
+
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  
+சேர்த்துப் பாருங்கள்.
+
+text-shadow: 2px 2px 5px red; சேர்த்துப் பாருங்கள்.  
+
+text-shadow: 2px 2px red; சேர்த்துப் பாருங்கள்.  
+  
+  
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  text-shadow: 2px 2px;
+}
+</style>
+</head>
+<body>
+<h1>Text-shadow effect!</h1>
+</body>
+</html>
+
+CSS Layout: 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<link rel="stylesheet" href="styles/style2.css"> 
+</head>
+<body>
+<div class="header">
+  <h1>My Name</h1>
+</div>
+</body>
+</html>
+
+
+style2.css
+----------
+/* Style the header */
+body {
+  margin: 0;
+}
+
+
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+
+
+
