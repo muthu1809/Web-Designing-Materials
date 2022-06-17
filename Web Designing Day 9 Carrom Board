@@ -1,0 +1,269 @@
+<!-- Carrom Board --> 
+
+<html>
+	<head>
+		<title> CarromBoard </title>
+		<link rel="stylesheet" type="text/css" href="styles/layout.css">
+	<meta name="viewport" content="width=device-width", initial-scale=1>
+	</head>
+	<body>
+		<div class="carrom-frame">
+			<!-- Pockets --> 
+			<div class="pockets p1"> </div>
+			<div class="pockets p2"> </div>
+			<div class="pockets p3"> </div>
+			<div class="pockets p4"> </div>
+			<!-- End Of Pockets --> 
+			<!-- Bases --> 
+			<div class="base top-base"> 
+				<div class="red-circle c1">	</div>
+				<div class="outline outline-1"> </div>
+				<div class="red-circle c2">	</div>
+				<div class="outline outline-2"> </div>
+			
+			</div>
+			<div class="base right-base">
+				<div class="red-circle c3">	</div>
+				<div class="outline outline-3"> </div>
+				<div class="red-circle c4">	</div>
+				<div class="outline outline-4"> </div>
+			</div>
+			
+			<div class="base bottom-base">
+				<div class="red-circle c5">	</div>
+				<div class="outline outline-5"> </div>
+				<div class="red-circle c6">	</div>
+				<div class="outline outline-6"> </div>
+				
+			</div>
+			<div class="base left-base">
+				<div class="red-circle c7">	</div>
+				<div class="outline outline-7"> </div>
+				<div class="red-circle c8">	</div>
+				<div class="outline outline-8"> </div>
+				
+			</div>
+			<!-- Corners -->
+			<div class = "corners cor1"> </div>
+			
+			<!-- End of Corners -->
+		
+		</div>
+		
+		
+	</body>
+</html>
+
+style1.css:
+----------
+
+.carrom-frame{
+	border:5px solid brown;
+	height:600px; width:600px; 
+	border-radius:20px;
+	position:absolute;
+	top:50%; left:50%;
+	transform:translate(-50%,-50%);
+}
+/* Pockets style */
+.pockets{
+	height: 60px;
+	width:60px;
+	background:black;
+	position: absolute;	
+	border-radius: 50%;
+}
+
+.p1{
+	top:0;
+	left:0; 
+}
+
+.p2{
+	top:0;
+	right:0; 
+}
+
+.p3{
+	bottom:0;
+	right:0; 
+}
+
+.p4{
+	bottom:0;
+	left:0; 
+}
+/* End of Pockets style */
+/* Bases */
+.base{
+	border: 3px solid black; 
+	position: absolute; 
+	transform:translate(-50%,-50%);
+	border-radius: 8px;
+}
+
+.top-base{
+	height:6.5%;
+	width:75%;
+	top:14%;
+	left:50%;	
+	border-bottom:1.5px solid black;
+}
+
+.right-base{
+	height:65%; 
+	width: 6.5%;
+	top:50%;
+	right:2%;
+	border-radius: 6px;
+	border-left:1.5px solid black;
+}
+
+.bottom-base{
+	height:6.5%;
+	width:75%;
+	bottom:6%;
+	left:50%;	
+	border-top:1.5px solid black;
+}
+
+.left-base{
+	height:65%; 
+	width: 6.5%;
+	top:50%;
+	left:10%;
+	border-radius: 6px;
+	border-right:1.5px solid black;
+}
+/* End of Bases */
+/* Circle */
+.red-circle{
+	height:35px;
+	width: 35px;
+	background:red;
+	position:absolute;
+	border-radius: 50%;
+	margin: 3px -4px;
+}
+
+.c1{
+	top:0%; 
+	left:0%;
+}
+
+.c2{
+	top:0%; 
+	right:0%;
+}
+.c3{
+	top:0%;
+	right:0%;
+	margin: 2.5px 1.5px;
+	
+}
+.c4{
+	bottom:0%;
+	right:0%;
+	margin: 2.5px 1.5px;
+}
+.c5{
+	bottom:0%; 
+	left:0%;
+}
+
+.c6{
+	bottom:0%; 
+	right:0%;
+}
+
+.c7{
+	top:0%;
+	left:0%;
+	margin: 3.2px 1.8px;
+	
+}
+.c8{
+	bottom:0%;
+	left:0%;
+	margin: 3.2px 1.8px;
+}
+/*End of Circles */
+
+/*Outline */
+.outline
+{
+	height:37px;
+	width: 37px;
+	border: 4px solid black;
+	position:absolute;
+	border-radius: 50%;
+}
+
+.outline-1
+{
+top:-2px; 
+left:-2%;
+}
+
+.outline-2
+{
+top:-2px; 
+right:-2%;
+}
+
+.outline-3
+{
+top:-2px; 
+left:-2%;
+}
+
+.outline-4
+{
+bottom:-2px; 
+left:-2%;
+}
+
+.outline-5
+{
+bottom:-2px; 
+left:-2%;
+}
+
+.outline-6
+{
+bottom:-2px; 
+right:-2%;
+}
+
+.outline-7
+{
+bottom:-2px; 
+left:-2%;
+}
+
+.outline-8
+{
+top:-2px; 
+left:-2%;
+}
+/*End Of Outline */
+/* Corners */
+
+.corners{
+height: 70px; 
+width: 70px; 
+border: 10px solid rgba(240,120,75);
+	position: absolute; 
+transform:translate(-50%,-50%);
+	
+}
+.cor1{
+	border-right: 0px;
+	border-bottom:0px;
+	border-radius: 50% 0 0 0; 
+	top:6%; 
+	left: 5%;
+}
+
+/* End of Corners */
+
