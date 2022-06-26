@@ -1,0 +1,323 @@
+Document Object Model: 
+
+Dynamically access and Update the Content, Structure and Style of a Document.  
+
+What is Object: 
+
+DOM Structure: 
+
+<p id="name"> Mathi </p> 
+
+document.getElementById("name").innerHTML
+
+Inner HTML என்பது இங்கே Mathi எனக் கொடுக்கும்.
+
+inputஐ எப்படி எடுப்பது?
+
+<input id="username"> </input> 
+பயனர் கொடுக்கும் உள்ளீட்டை(input) எடுப்பதற்கு value பயன்படும். 
+
+document.getElementById("name").value
+
+
+Move Data into InnerHTML: 
+submit பொத்தானைச் சொடுக்கும் போது 
+
+index2.html
+-----------
+
+<!DOCTYPE html>
+<html>
+	<head> 
+		<script type="text/javascript" src="demo.js"> </script>
+<style>
+input{width:40%;height:50px;}
+h2, p
+{
+color:blue;
+}
+button
+{
+width:40%; 
+height:50px; 
+background-color: black; 
+color: yellow; 
+}
+</style>
+</head>	 
+<body>
+<h2> Select By ID எடுத்துக்காட்டு</h2>
+<input id="fromCity" placeHolder="Enter City Name"> <br>
+<button> Submit </button>
+<p id="toCity"> </p>
+</body>
+</html>
+
+demo.js
+-------
+alert("Hi JS")
+
+submit பொத்தானைச் சொடுக்கும் போது  உள்ளீடாகக் கொடுக்கப்பட்ட ஊரின் பெயரை எடுக்க வேண்டும்.  அதற்குப் பயன்படும் event - onclick
+
+<button onclick="getCityName()"> Submit </button>
+
+இப்போது getCityName() என்னும் பெயரில் ஒரு function நமக்கு வேண்டும் அல்லவா> 
+
+<p> </p> க்குக் கீழ்: 
+<script>
+	function getCityName()
+	{
+	cityName = document.getElementById("fromCity").value;
+	
+	}
+
+</script> 
+
+இப்போது boxஇல் இருக்கும் மதிப்பை எடுக்க, அதற்கு அடுத்த வரியில். 
+
+document.getElementById("toCity").innerHTML=cityName; சேர்க்க. 
+
+	function getCityName()
+	{
+	cityName = document.getElementById("fromCity").value;
+	document.getElementById("toCity").innerHTML=cityName;
+	}
+
+
+இப்போது இந்த function ஐ அப்படியே வெட்டி எடுத்து demo.jsஇல் வைத்துக் கொள்ளலா
+கொள்ளலாம். <script> </script> இரண்டையும் நீக்கி விடலாம். 
+
+--------------
+
+DOM - Select By Tag Name: 
+
+<!DOCTYPE html>
+<html>
+	<head> 
+		<script type="text/javascript" src="demo.js"> </script>
+<style>
+input{width:40%;height:50px;}
+h2, p
+{
+color:blue;
+}
+button
+{
+width:40%; 
+height:50px; 
+background-color: black; 
+color: yellow; 
+}
+</style>
+</head>	 
+<body>
+<h2> Select By Tag Name எடுத்துக்காட்டு</h2>
+<input placeHolder="Enter City Name"> இல் இருந்து<br>
+<input placeHolder="Enter City Name"> வரை<br>
+<input placeHolder="Enter City Name"> இடைத்தங்கல்<br>
+<button onclick="getCityName()"> Submit </button>
+<p> </p>
+<p> </p>
+<p> </p>
+	<script>
+		function getCityName()
+	{
+	cityNamesInput = document.getElementsByTagName("input")
+	cityNamesOutput = document.getElementsByTagName("p")
+	cityNamesOutput[0].innerHTML =cityNamesInput[0].value
+	cityNamesOutput[1].innerHTML =cityNamesInput[1].value
+	cityNamesOutput[2].innerHTML =cityNamesInput[2].value
+	}
+		
+	</script>
+</body>
+</html>
+
+மேல் உள்ளதைக் கையாளத் தான் for loop.  
+for(int i=0; i<cityNamesInput.length;i++)
+{
+cityNamesOutput[i].innerHTML =cityNamesInput[i].value
+}
+
+
+Select By Tag Name By ID:
+tag வைத்து எடுக்கும் போது எல்லா inputஉம் வர வாய்ப்பு உள்ளதே!  அதை எப்படிக் கையாள்வது?
+அதற்குத் தான் div id பயன்படுத்தப் போகிறோம்.  
+
+கீழ் உள்ளதைச் செயல்படுத்தி அதில் உள்ள சிக்கலைக் கவனியுங்கள்.  
+
+<!DOCTYPE html>
+<html>
+	<head> 
+		<script type="text/javascript" src="demo.js"> </script>
+<style>
+input{width:40%;height:50px;}
+h2, p
+{
+color:blue;
+}
+button
+{
+width:40%; 
+height:50px; 
+background-color: black; 
+color: yellow; 
+}
+</style>
+</head>	 
+<body>
+<h2> Select By Tag Name By ID எடுத்துக்காட்டு</h2>
+<input placeHolder="Enter City Name"> இல் இருந்து<br>
+
+<div id = "cities">
+<input placeHolder="Enter City Name"> இல் இருந்து<br>
+<input placeHolder="Enter City Name"> வரை<br>
+<input placeHolder="Enter City Name"> இடைத்தங்கல்<br>
+
+<button onclick="getCityName()"> Submit </button>
+<p> </p>
+<p> </p>
+<p> </p>
+
+</div>
+	<script>
+		function getCityName()
+	{
+	cityNamesInput = document.getElementsByTagName("input")
+	cityNamesOutput = document.getElementsByTagName("p")
+	cityNamesOutput[0].innerHTML =cityNamesInput[0].value
+	cityNamesOutput[1].innerHTML =cityNamesInput[1].value
+	cityNamesOutput[2].innerHTML =cityNamesInput[2].value
+	}
+		
+	</script>
+</body>
+</html>
+
+இதைத் தவிர்க்கத் தான், div idஐ scriptக்குள் பயன்படுத்தப் போகிறோம்.  
+
+	<script>
+		function getCityName()
+	{
+       cityDivision = document.getElementById("cities")
+	cityNamesInput = cityDivision.getElementsByTagName("input")
+	cityNamesOutput = document.getElementsByTagName("p")
+	cityNamesOutput[0].innerHTML =cityNamesInput[0].value
+	cityNamesOutput[1].innerHTML =cityNamesInput[1].value
+	cityNamesOutput[2].innerHTML =cityNamesInput[2].value
+	}
+		
+	</script>
+
+
+ஜாவாஸ்கிரிப்டைப் பயன்படுத்தி CSS கோப்பை எப்படிக் கையாள்வது? 
+
+index.html: 
+
+<!DOCTYPE html>
+<html>
+	<head> 
+		<script type="text/javascript" src="demo.js"> </script>
+    <link rel="stylesheet" href="styles/layout.css"> 
+</head>	 
+<body>
+<h2> Select By Tag Name By ID எடுத்துக்காட்டு</h2>
+<input placeHolder="Enter City Name"> இல் இருந்து<br>
+
+<div id = "cities">
+<input placeHolder="Enter City Name"> இல் இருந்து<br>
+<input placeHolder="Enter City Name"> வரை<br>
+<input placeHolder="Enter City Name"> இடைத்தங்கல்<br>
+
+<button onclick="getCityName()"> Submit </button>
+<p> </p>
+<p> </p>
+<p> </p>
+
+</div>
+	<script>
+		function getCityName()
+	{
+	cityNamesInput = document.getElementsByTagName("input")
+	cityNamesOutput = document.getElementsByTagName("p")
+	cityNamesOutput[0].innerHTML =cityNamesInput[0].value
+	cityNamesOutput[1].innerHTML =cityNamesInput[1].value
+	cityNamesOutput[2].innerHTML =cityNamesInput[2].value
+	}
+		
+	</script>
+</body>
+</html>
+
+
+layout.css:
+input{width:40%;height:50px;}
+h2, p
+{
+color:blue;
+}
+button
+{
+width:40%; 
+height:50px; 
+background-color: black; 
+color: yellow; 
+}
+
+demo.js: 
+--------
+function getCityName()
+{
+    cityDivision = document.getElementById("cities")
+	cityNamesInput = cityDivision.getElementsByTagName("input")
+	cityNamesOutput = document.getElementsByTagName("p")
+for(i=0;i<cityNamesInput.length;i++)
+    {
+	cityNamesOutput[i].innerHTML =cityNamesInput[i].value;
+    cityNamesOutput[i].style.color = "green";
+	}
+}
+
+தேவைப்பட்டால்: 
+cityNamesOutput[i].style.backgroundColor = "yellow";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
