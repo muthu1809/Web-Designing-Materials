@@ -1,0 +1,152 @@
+React Introduction in Tamil: 
+
+reactjs.org
+
+Javascript Library - Framework இல்லை.  
+
+Facebook உருவாக்கிய திட்டப்பணி[project]
+
+Rendering more elements very easily in DOM.  
+
+Single Page Web Application.  
+
+ஒரு குறிப்பிட்ட elementஐ மட்டும் rerender பண்ண மிக உதவியாக இருக்கும். 
+
+Component Based Library.  
+
+Component என்பது Object போல.  
+
+எ.கா. navbar, footer ஆகியன components.  
+
+Learn Once, Write Anywhere. 
+Node மூலம் Serverஇல் இயங்கும்.  React Native மூலம் Mobile செயலிகள் செய்யலாம்.  
+
+Reactஇல் வேலை செய்ய என்ன வேண்டும்?
+NodeJS வேண்டும்.  
+
+nodejs.org 
+நிறுவ: sudo apt install nodejs
+
+முன்பு [2009 வரை] JavaScript உலாவியில் மட்டும் தான் வேலை செய்யும்.  உலாவியில் இருக்கும் JS Engine அதை இயங்க வைக்கும்.
+
+https://blog.mozilla.org/javascript/ பாருங்கள்.  
+
+Node JS என்பது என்ன?
+
+உலாவியில் இருக்கும் JS Engineஇன் Runtime Environmentஐ எடுத்து Desktop Application ஆக மாற்றியது தான் Node JS.  
+
+எப்படி நிறுவுவது?
+Terminalஇல் 
+
+sudo apt install nodejs
+கொடுங்கள்.  
+
+node -v அல்லது node --version கொடுத்துப் பாருங்கள்.  
+
+இப்போது npm -v கொடுத்துப் பாருங்கள். 
+
+npm - Node Package Manager. 
+
+இணையத்தில் இருக்கும் பிற moduleகளைத் தரவிறக்கிப் பயன்படுத்த npm பயன்படுகிறது.  
+
+npmjs.com போய்ப் பாருங்கள்.  கிட்டத்தட்ட Android Playstore போல.  
+
+https://www.npmjs.com/package/react-image-gallery போல எதையாவது பாருங்கள்.  
+
+இப்போது அங்கே reactஐத் தேடுங்கள்.  
+
+https://codesandbox.io/ பாருங்கள்.  அதில் Create Sandbox --> React கொடுத்துப் பாருங்கள்.  public என அடைவு இருக்கும்.  
+App.js, index.js, styles.css, package.json இருக்கும்.  
+
+Node அடிப்படையில் என்ன application செய்தாலும் package.json இருக்கும்.  
+
+package.json - Meta Data.  
+
+https://codepen.io/pen/
+
+
+இதே போல நாம் எப்படிச் செய்வது?
+
+டெர்மினலில் 
+mkdir react-sample 
+cd react-sample
+
+இப்போது npm init எனக் கொடுங்கள். 
+
+இப்போது வரும் கருத்துகளில் Descriptionக்கு மட்டும் hello world எனக் கொடுத்து மீதி எல்லாவற்றிற்கும் என்டர் தட்டவும்.  
+
+கடைசியில் is this OK? (yes) எனக் கேட்கும்.  yes எனக் கொடுங்கள்.  
+
+இப்போது package.json உருவாகியிருக்கும்.  அதை அழித்து விடுங்கள்.  
+
+டெர்மினலில் 
+npm init -y எனக் கொடுங்கள்.  
+
+அதுவே தேவையான எல்லாவற்றையும் செய்திருக்கும்.  
+
+
+இப்போது public, src அடைவுகள் நமக்குத் தேவை.  அதில் App.js முதலிய கோப்புகள் இருக்க வேண்டும்.  இன்னும் இரண்டு மூன்று அடைவுகள் உருவாக்க வேண்டும்.  அதையெல்லாம் எப்படிச் செய்வது?  
+
+இதை எளிமைப்படுத்தத் தான் create-react-app இருக்கிறது.  
+
+npmjs.com போய் create-react-app தேடுங்கள்.  
+
+அங்கே இருந்து npm i create-react-app என்பதை copy செய்து கொள்ளுங்கள். 
+
+டெர்மினலில் 
+cd .. கொடுத்து வெளியே வாருங்கள்.  
+npm i create-react-app
+எனக் கொடுக்கலாம்.  ஆனால் அப்படிக் கொடுத்தால் ஓர் அடைவில் தான் இயங்கும். 
+
+global ஆக உங்கள் கணினி முழுவதும் தேவை என்றால், 
+npm i -g create-react-app
+கொடுங்கள்.  [i என்பது install]
+மேல் உள்ளது வேலை செய்யவில்லை எனில் 
+
+sudo npm install -g create-react-app --unsafe-perm=true --allow-root
+
+
+இப்போது sample என்னும் பெயரில் ஒரு react app உருவாக்கப் போகிறோம். 
+டெர்மினலில் 
+create-react-app sample என்று கொடுங்கள்.  
+
+[பழைய பதிப்புகளில் npx create-react-app sample எனக் கொடுக்க வேண்டும்]
+
+
+இப்போது 
+cd sample எனக் கொடுத்து, 
+npm start கொடுத்தால் Hello World Application வந்து விடும்.  
+
+இப்போது node_modules போய்ப் பாருங்கள்.  அங்கே தான் நம்முடைய Dependenciesஇன் மூல நிரல்கள் இருக்கும்.  
+
+.gitignore இல் தேவையற்றதை ignore செய்து விடுவார்கள்.  
+
+
+src அடைவில் reportWebVitals.js, setupTests.js கோப்புகளை நீக்கி விடலாம்.  அவை தேவைப்படாதவை.  
+
+சரி எங்கே நாம் நிரல் எழுதப் போகிறோம்?
+App.js இல் 
+
+App.jsஇல் இருக்கும் நிரலை index.jsஇல் render செய்யப் போகிறோம்.எங்கே render ஆகும்?  root என்னும் idக்குள்.  சரி, இந்த root எங்கே இருக்கிறது?
+
+public அடைவு --> index.html இல் root ஐப் பார்க்கலாம்.  
+localhost:3000 பக்கத்தின் consoleஇல் rootஐப் பாருங்கள்.  
+
+index.htmlஇல் root இன் பெயரை மாற்றிப் பாருங்கள்.  திரையில் வெளியீடு வராது. 
+
+போக்கு: 
+App.js --> index.js --> index.html
+
+App.jsஇல் மீதி நிரலை நீக்கி விட்டு, 
+function App()
+{
+return(
+	<div className="App">
+		<h1> First React Application <h1>
+	</div>
+);
+}
+
+export default App; 
+
+எனக் கொடுங்கள்.  
