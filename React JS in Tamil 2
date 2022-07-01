@@ -1,0 +1,289 @@
+React Intro Part 2
+
+JSX, Components, Named Export, Default Export
+
+JSX: 
+வழக்கமாக javascript நிரல் தனியாக எழுதி அதை htmlஇல் பயன்படுத்துவோம்.  
+அல்லது
+html நிரலின் id,nameஐ எடுத்து,ஜாவாஸ்கிரிப்டில் பயன்படுத்துவோம். 
+
+ஆனால், இங்கே, JSXஇல் நேரடியாக javascriptஐ எழுதலாம். { }க்குள் எழுதுங்கள்.   
+
+JavaScript like XML.  
+
+
+App.js: 
+
+import "./App.css"; 
+
+function App()
+{
+let name = "react"; // இப்போது சேர்க்கப்பட்டது 1
+return(
+<div className= "App"> // இது App.css ஐக் குறிக்கும்.  
+<h1> Welcome to React </h1>
+<h1> {name}	</h1> // இப்போது சேர்க்கப்பட்டது 2
+</div>
+);
+}
+
+export default App; 
+
+2இல் உள்ள {} இடையில் தான் எல்லா javascript நிரலையும் எழுதப் போகிறோம்.  
+
+மேல் உள்ள நிரல் எப்படி comiple ஆகும்?  அதைச் செய்வது தான் babeljs
+
+https://babeljs.io/
+அங்கே Try It outக்குப் போங்கள்.  
+
+const name = "muthu";
+<h1> Hi {name} </h1> 
+என்று கொடுங்கள்.  
+
+const name = "muthu";
+
+/*#__PURE__*/
+React.createElement("h1", null, " Hi ", name, " "); 
+
+என்று விடை காட்டும்.  
+
+இப்போது, 
+const name = "muthu";
+<h1 style={{color:green}}> Hi {name} </h1> 
+என்று கொடுங்கள்.  
+null போய் இருக்கும் என்பதைப் பார்க்கலாம்.  
+
+இங்கே, மேலே, இரண்டு {{	}} கொடுத்திருப்பதைப் பார்க்கலாம்.  
+
+குறிப்பு: 
+1)JSXஇன் எல்லா tagக்கும் closing tag கொடுக்க வேண்டும்.  <br/>, <img/> என்று. 
+2) JSX எப்போதுமே ஒரு tagஐத் தான் return பண்ணும்.  அதற்காகத் தான் div tagக்குள் வைக்கிறோம்.  
+3) சில நேரங்களில் style issues வரும் என்பதால், <div> </div> ஐ வெறுமனே <> </> என்று கொடுப்பார்கள்.  
+
+Components:
+---------
+1. Class Components
+	OOPs Concepts, this, constructor இருக்கும்.  
+2. Functional Components
+	- Hooks இருக்கும்.  
+	
+தொடக்கக் காலத்தில் class components பயன்படுத்தினார்கள். இப்போது Functional Components.  
+
+2. Functional Components.  
+
+function App என்று எழுதியிருக்கிறோமே அது தான், function component.  App என்பது அதன் பெயர்.  முதல் எழுத்து capital தான்.  வழக்கமான html tagக்கும் JSX tagகும் வேறுபாடு தெரிவதற்கு இந்த ஏற்பாடு.  இதை வைத்துத் தான் Babel Compiler பிரித்துப் பார்க்கும்.  
+
+
+import "./App.css"; 
+
+function App()
+{
+let name = "react"; // இப்போது சேர்க்கப்பட்டது 1
+return(
+<div className= "App"> // இது App.css ஐக் குறிக்கும்.  
+<h1> Welcome to React </h1>
+<h1> {name}	</h1> // இப்போது சேர்க்கப்பட்டது 2
+</div>
+);
+}
+
+export default App; 
+
+return keywordக்கு மேல் ஜாவாஸ்கிரிப்ட் நிரல் எழுத வேண்டும். return keywordக்குக் கீழ் JSX எழுத வேண்டும்.  
+
+1. இப்போது srcக்கு உள் component என்றோர் அடைவை(folder) உருவாக்குங்கள்.  
+2. அதற்குள் Sample.jsx என்றொரு கோப்பை(file) உருவாக்குங்கள். 
+3. இப்போது functional component உருவாக்குவோம்.  
+Sample.jsx
+---------------
+
+function Sample(){
+
+	return(
+	<>
+	<h1> This is sample.js </h1>
+	</>
+	
+	); 
+}
+h1> Check Sample.js </h1>
+<Sample></Sample> எனச் சேர்த்து விடுங்கள்.  
+கடைசியில் 
+export default Sample; சேருங்கள்.  
+
+4. export செய்த Sampleஐ எங்கே import செய்வது? App.jsஇல் 
+App.js
+---------
+import Sample from "./component/Sample" சேர்த்துக் கொள்ளுங்கள்.  பிறகு returnஇல் 
+<h1> Welcome to React </h1>
+<h1> {name}	</h1> 
+இரண்டு வரிகளையும் நீக்கி விட்டு, 
+<h1> Check Sample.js </h1>
+<Sample></Sample> எனச் சேர்த்து விடுங்கள்.  
+
+
+5. இதனுடைய பாய்வு(flow) புரிந்து கொள்ளலாமா?
+App.js, index.jsக்குப் போகும்.  இங்கே தான் React DOM அதை render செய்யும்.  index.jsஇல் getElementById("hello") என்று இருக்கிறது அல்லவா? அந்த helloவை public அடைவில் index.htmlஇல் பார்க்கலாம்.  
+
+குறிப்பு: 
+என்ன பெயரில் நாம் tag உருவாக்குகிறோமோ அதே பெயரில் importஐ அடுத்துக் கொடுக்க வேண்டும்.  
+
+Named export:
+------------
+
+Sample.jsx: கோப்பைக் கீழ் உள்ளது போல் மாற்றுங்கள். 
+---------
+export function Sample()
+{
+return(
+<>
+<h1> Check sample.js </h1>
+</>
+); 
+}
+
+இப்போது டெர்மினலில் 
+export 'default' (imported as 'Sample') was not found in './component/Sample' (possible exports: Sample)
+
+என்று நமக்குத் திட்டு கிடைக்கும்.  இதை எப்படிச் சரி செய்வது?
+
+App.jsஇன் import Sample from "./component/Sample";ஐ 
+import {Sample} from "./component/Sample";
+என்று மாற்றுங்கள். 
+
+கேள்வி: 
+ஒரு jsx கோப்பில் ஒரு component தான் உருவாக்க முடியுமா?
+இல்லை. நிறைய செய்யலாம்.  ஆனால் அப்படிச் செய்தால், அங்கே ஒரே ஒரு default export தான், மீதி எல்லாவற்றையும் named export செய்ய முடியும்.  
+
+export function Sample()
+{
+return(
+<>
+<h1> Check sample.js </h1>
+</>
+); 
+}
+
+export function Sample2()
+{
+return(
+<>
+<h1> Check sample.js </h1>
+</>
+); 
+}
+
+import இல் {Sample, Sample2} கொடுக்கலாம்.  
+
+
+
+props:
+-------
+
+1. bootstrapcdn.com போய் ஏதாவது ஒரு template எடுத்துக் கொள்ளுங்கள்.  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+2. இதை இப்போது index.html இல் சேர்த்து விடுங்கள்.  
+
+3. ஏதாவது ஒரு பொருளை getbootstrap.com/docs போய் எடுத்துக் கொள்ளுங்கள்.  
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+4. இந்த htmlஐ JSXஆக மாற்றி Mobiles.jsxஇல் வைக்க வேண்டும்.  அதாவது, {}, closing brace கொடுக்க வேண்டும்.  classname என classஐ மாற்ற வேண்டும். 
+
+
+5. இப்போது, Mobiles.jsx என ஒரு கோப்பை componentஇல் உருவாக்குங்கள்.  
+5.1. இதில், import React from 'react' சேர்த்துக் கொள்ளுங்கள்.  
+
+import React from 'react'
+
+export function Mobiles()
+{
+return(
+<>
+
+</>
+); 
+}
+
+export default Mobiles
+
+6. returnஇல் <> </> க்கு இடையில் நாம் எடுத்த Cardஐச் சேருங்கள்.  
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+7. இந்த htmlஐ JSXஆக மாற்ற வேண்டும்.  styleஇல் {{}}, imgஐ மூடுவது, 
+
+<div class="card" style={{"width: 18rem;"}}>
+  <img src="..." class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Samsung</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	<p> Rs. 12000 </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+8. இப்போது இந்த componentஐ App.jsஇல் பயன்படுத்தலாம்.  
+<Mobiles/> எனச் சேர்த்தால் போதும்.  
+
+
+
+இப்படி Component சேர்ப்பதில் என்ன நன்மை?
+---------------------------------------
+ஒரு componentஐ எவ்வளவு முறை வேண்டுமானாலும் திரும்பத் திரும்பப் பயன்படுத்த முடியும்.  
+
+App.jsஇல் 
+<Mobiles/>
+<Mobiles/>
+<Mobiles/>
+<Mobiles/>
+
+எனப் பல முறை கொடுத்துப் பாருங்கள். 
+
+இப்படித் திரும்பத் திரும்பப் பயன்படுத்தும் componentஐ propsமூலம் எடிட் செய்து கொள்ளலாம். 
+
+Mobiles.jsxஇல்  {props.brandname},  {props.brandprice} என மாற்றி விடுங்கள்.  
+
+Mobile.jsx
+----------
+<div class="card" style={{"width: 18rem;"}}>
+  <img src="..." class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">{props.brandname}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	<p> {props.brandprice} </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+மாற்றி விட்டு, 
+function Mobiles() என்றிருப்பதை 
+function Mobiles(props) என மாற்றுங்கள்.  
+
+இப்போது இதைக் கூப்பிடும் App.jsஇல் 
+<Mobiles /> என்றிருப்பதை 
+<Mobile brandname="Samsung" brandprice="12000"/>
+
+இப்போது App.jsஇல் 
+<Mobile brandname="Samsung" brandprice="12000"/>
+<Mobile brandname="Apple" brandprice="10000"/>
+<Mobile brandname="Sony" brandprice="8000"/>
+
+என்று கொடுத்துப் பாருங்கள்.  
+
