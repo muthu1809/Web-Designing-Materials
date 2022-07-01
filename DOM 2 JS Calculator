@@ -1,0 +1,191 @@
+Creating HTML Tag using Javascript: 
+
+1. ஒரு elementஐ உருவாக்கி(<p>) அதில் நம்முடைய வார்த்தைகளை அனுப்புவோம்.  
+
+2. இதைச் செய்ய ஒரு division உருவாக்கி, append செய்வோம்.  
+
+3. appendChild function மூலம் நாம் தட்டச்சிட்ட textஐ division tag சேமிக்கப் போகிறோம்.  
+
+4. document.createElement("p") எனக் கொடுத்தால் paragraph element உருவாகி விடும்.  
+
+5. document.createTextNode("Hi") எனக் கொடுத்தால் text node உருவாகி விடும்.  
+
+6. இந்த இரண்டையும் ஒரு divisionஇல் காட்டுவோம்.  
+
+
+index2.html:
+-----------
+<!DOCTYPE html>
+<html>
+	<head> 	
+    <link rel="stylesheet" href="styles/layout.css"> 
+    <script type="text/javascript" src="demo.js"> </script>
+</head>	 
+<body>
+<h2> Creating HTML Element எடுத்துக்காட்டு</h2>
+<div id='mydiv'>
+
+</div> 
+<input placeholder="Enter your inputs here" id="input_text"> <br>
+	<button onclick= "create()"> Submit </button>
+	
+	</body>
+</html>
+
+layout.css
+---------
+*{box-sizing: border-box;}
+
+input{
+	width: 30%;
+	height: 50px; 
+	color: green; 
+	font-size: 20px; 
+	background-color: white; 
+}
+h2{
+	color: black;
+}
+button
+{
+width: 25%;
+height: 30px; 
+font-size: 24px; 
+background-color: lime; 
+color: black; 
+border-radius: 20%
+
+}	
+div
+{
+	width: 30%;
+	height: 200px; 
+	border: 1px dotted blue; 
+	background-color: #f1f1f1; 
+}
+
+p
+{
+color: blue; 
+font-size: 20px; 
+font-weight: bold; 
+}
+	
+demo.js: 
+-------
+function create()
+{
+content = document.getElementById("input_text").value; 
+element = document.createElement("p") //இங்கே <p></p> வந்திருக்கும்.  
+our_data = document.createTextNode(content); //இங்கே நம்முடைய text
+element.appendChild(our_data); 
+mydiv = document.getElementById("mydiv");
+mydiv.appendChild(element); 
+}
+----------------
+
+Simple Calculator Using JavaScript: 
+
+index2.html
+------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Simple Calculator </title>
+	<link rel="stylesheet" href="styles/layout.css"> 
+	</head>
+	<body>
+		<h2> Simple Calculator Using JavaScript </h2>
+		<div class = "calc_form">
+			<form name="form1">
+				<input id = "calc" type="text" name="results"> 
+				<br> <br>
+<input type="button" value="1"   onclick="form1.results.value = form1.results.value+'1'"> 
+				<input type="button" value="2" onclick="form1.results.value = form1.results.value+'2'"> 
+				<input type="button" value="3"onclick="form1.results.value = form1.results.value+'3'"> 
+				<input type="button" value="+"onclick="form1.results.value = form1.results.value+ '+'">
+				
+				<br> <br>
+				<input type="button" value="4"onclick="form1.results.value = form1.results.value+'4'"> 
+				<input type="button" value="5"onclick="form1.results.value = form1.results.value+'5'"> 
+				<input type="button" value="6"onclick="form1.results.value = form1.results.value+'6'"> 
+				<input type="button" value="-"onclick="form1.results.value = form1.results.value+'-'"> 
+				
+				<br> <br>
+				<input type="button" value="7" onclick="form1.results.value = form1.results.value+'7'"> 
+				<input type="button" value="8"onclick="form1.results.value = form1.results.value+'8'"> 
+				<input type="button" value="9"onclick="form1.results.value = form1.results.value+'9'"> 
+<input type="button" value="*" onclick="form1.results.value = form1.results.value+'*'"> 
+				
+				<br> <br>
+				<input type="button" value="0"onclick="form1.results.value = form1.results.value+'0'"> 
+				<input type="button" value="/"onclick="form1.results.value = form1.results.value+'/'"> 
+				<input type="button" value="."onclick="form1.results.value = form1.results.value+'.'"> 
+				<input type="button" value="=" onclick="form1.results.value = eval(form1.results.value)">
+				
+<br>
+<input type="button" id="clear" value="Clear All" onclick="form1.results.value =''">
+				
+			</form>
+			
+		</div>
+		
+	</body>
+</html>
+		
+---------
+layout.css
+---------
+h2
+{
+	text-align: center; 
+	background-color: brown;
+	color: white;
+}
+input
+{
+	width: 25px; 
+	background-color: #f1f1f1;
+	color: black; 
+	border: 1px solid brown; 
+	border-radius: 8px; 
+	padding: 20px; 
+	margin: 5px; 
+	
+}
+#calc
+	{
+	width: 180px; 
+	background-color: #f1f1f1;
+	color: black; 
+	border: 1px solid brown; 
+	border-radius: 8px; 
+	padding: 20px; 
+	margin: 5px; 
+	}
+#clear
+	{
+	width: 180px; 
+	background-color: #f1f1f1;
+	color: black; 
+	border: 1px solid brown; 
+	border-radius: 8px; 
+	padding: 20px; 
+	margin: 5px; 
+	}
+			
+		
+		
+		
+		
+		
+		
+	
+
+
+
+
+
+
+
+
