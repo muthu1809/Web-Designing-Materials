@@ -107,7 +107,7 @@ function Sample(){
 	); 
 }
 h1> Check Sample.js </h1>
-<Sample></Sample> எனச் சேர்த்து விடுங்கள்.  
+
 கடைசியில் 
 export default Sample; சேருங்கள்.  
 
