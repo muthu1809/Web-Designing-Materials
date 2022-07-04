@@ -123,7 +123,7 @@ import Sample from "./component/Sample" சேர்த்துக் கொள
 
 
 5. இதனுடைய பாய்வு(flow) புரிந்து கொள்ளலாமா?
-App.js, index.jsக்குப் போகும்.  இங்கே தான் React DOM அதை render செய்யும்.  index.jsஇல் getElementById("hello") என்று இருக்கிறது அல்லவா? அந்த helloவை public அடைவில் index.htmlஇல் பார்க்கலாம்.  
+App.js, index.jsக்குப் போகும்.  இங்கே தான் React DOM அதை render செய்யும்.  index.jsஇல் getElementById("root") என்று இருக்கிறது அல்லவா? அந்த rootவை public அடைவில் index.htmlஇல் பார்க்கலாம்.  
 
 குறிப்பு: 
 என்ன பெயரில் நாம் tag உருவாக்குகிறோமோ அதே பெயரில் importஐ அடுத்துக் கொடுக்க வேண்டும்.  
@@ -286,4 +286,61 @@ function Mobiles(props) என மாற்றுங்கள்.
 <Mobile brandname="Sony" brandprice="8000"/>
 
 என்று கொடுத்துப் பாருங்கள்.  
+
+Array Destructuring:
+
+App.jsஇல் returnக்கு முன்பு, ஒரு array உருவாக்குவோம். 
+
+const actors = {"rajini", "kamal", "vijay","ajith"}
+
+console.log(actors[0])
+
+const actor1 = actors[0]; 
+const actor2 = actors[1]; 
+இப்படி எழுதுவதற்கு மாற்றாக, 
+Array Destructuringஇல் 
+
+const [actor1, actor2] = actors;  என்று எழுதலாம்.  
+
+Object Destructuring: 
+
+App.js இல் சேர்க்க: 
+
+const user{
+name: "Muthu",
+email: "muthu@gmail.com", 
+mobile:"12345",
+}
+
+இதில் நிறைய தகவல் இருந்தால் என்ன செய்வீர்கள்?
+
+const {name, email} = user;
+இப்படி எழுதலாம்.  
+
+இதை எதற்குப் பார்க்கிறோம்?
+propsஇல் props.name என்று எழுதுகிறோம் அல்லவா?
+அதை மாற்றி, 
+
+function Mobiles(props) இல், 
+
+const {name, price} = props; என்று கொடுத்து விட்டு, return செய்யும் இடத்தில், நேரடியாக, 
+{name}
+{price} 
+என்று கொடுக்கலாம்.  
+
+இன்னொரு முறை: 
+இப்போது propsஇல் உள்ள name, price தானே நமக்குத் தேவைப்படுகிறது.  எனவே, 
+
+function Product({name, price})
+என்று நேரடியாக மாற்றிக் கொள்ளலாம்.  இப்படிக் கொடுத்தால், const {name, price} = props;  என்னும் வரி தேவையில்லாது போய் விடும்.  
+
+Destructuringஇல் Default Value: 
+
+App.jsஇல் 
+<Mobiles price="12345"/> என்று name இல்லாமல் கொடுத்தால், default value சேர்த்துக் கொள்ள முடியும்.  
+
+எப்படி?
+Mobiles.jsxஇல் 
+
+function Mobiles({name="Mobile", price}) என்று மாற்றலாம்.  
 
