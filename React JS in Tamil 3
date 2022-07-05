@@ -1,0 +1,183 @@
+React Intro Part 3
+
+React State: 
+
+State என்பது variableஐப் போலத் தான். ஆனால், ஒவ்வொரு முறை state மாறும் போதும், component rerender ஆகும்.  [அப்போது UI rerender ஆகும்]
+
+class componentsஇல் stateஐப் பயன்படுத்த, constructor, this பற்றித் தெரிந்திருக்க வேண்டும்.  functional componentஇல் stateஐப் பயன்படுத்த useState என்னும் hook இருக்கிறது.  அதை import பயன்படுத்திக் கொள்ளலாம்.  
+
+App.jsஇல் 
+import { useState } from "react"; //1
+
+App.jsஇல் 
+function App()
+{
+useState() //2. useStateஐ call பண்ணியிருக்கிறோம்.  
+return <> </>
+}
+
+export default App; 
+
+3. useState() ஐ call செய்திருக்கும் இடங்களில் initialv value ஆக எல்லா datatypeஐயும் கொடுக்கலாம்.  [string, object, null, array, boolean என]. 
+
+function App()
+{
+const [display, setDisplay] = useState(0)
+return (<>
+<h3> {display} </h3>
+</>);
+}
+display என்பது variable.  setDisplay என்பது setter method. 
+
+App.js
+-------
+
+import "./App.css"; 
+
+import Mobiles from "./component/Mobiles";
+import {useState} from "react";
+function App()
+{
+const [display, setDisplay] = useState(0);
+return (<>
+<h3> {display} </h3>
+</>);
+}
+
+export default App; 
+
+useState(0); இல் வேறு ஏதாவது எண் கொடுத்துப் பாருங்கள்.  
+சரி, இப்போது setDisplayஐ எப்படிப் பயன்படுத்துவது?
+1. <h3>{display}</h3>க்குக் கீழ், 
+<br> </br>
+<button onClick={incrementDisplay}> Increase </button>
+எனச் சேருங்கள்.  
+2. இதில் incrementDisplay என்பது ஒரு function.  அதை வரையறுப்போமா?
+3. returnக்கு மேல் (ஜாவாஸ்கிரிப்ட்) functionஐ define பண்ணுங்கள்.  
+
+function incrementDisplay()
+{
+setDisplay(display+1); 
+}
+எனக் கொடுத்து விடை பாருங்கள்.  
+
+Arrow Function: 
+Arrow function பற்றித் தெரிந்து கொள்ள: https://www.w3schools.com/react/react_es6_arrow.asp
+
+const decrementDisplay = () => {
+setDisplay(display - 1);
+}; 
+என returnக்கு மேல் சேருங்கள்.  
+
+returnஇல் இன்னொரு button சேருங்கள்.  
+
+<br> </br>
+<button onClick={decrementDisplay}> Decrease </button>
+
+ஒவ்வொரு முறை buttonஐச் சொடுக்கும் போதும் component rerender ஆவதைப் பார்க்கலாம்.  
+
+இதே போல், string, object, array ஆகியவற்றையும் கொடுத்துப் பார்க்கலாம்.  
+
+
+Arrayஐ எப்படிச் சேர்ப்பது? 
+
+1. component அடைவில் UseStateArray.jsx உருவாக்குங்கள்.  
+
+UseStateArray.jsx: 
+------------------
+import React from "react";
+import {useState} from "react";
+
+function UseStateArray()
+{
+return <div>UseStateArray</div>;
+
+}
+
+export default UseStateArray;
+
+2. App.js: 
+---------
+return(
+<>
+	<UseStateArray/>
+</>
+); 
+export default App; 
+என மாற்றுக. 
+
+App.js: 
+-------
+import "./App.css"; 
+import {useState} from "react";
+import UseStateArray from "./component/UseStateArray";
+function App()
+{
+return (<>
+<>
+	<UseStateArray/>
+</>
+</>);
+}
+
+
+export default App; 
+
+3. இப்போது UseStateArray.jsxஇல் useStateஐ initialize பண்ணுவோமா?
+
+function UseStateArray()
+{
+const [data, setData] =  useState([])
+return <div>UseStateArray</div>
+
+}
+export default UseStateArray; 
+
+குறிப்பு: arrayஇன் functions map, filter தெரிந்து கொள்க.  
+
+4. மேல் உள்ளதில் const வரிக்கு அடுத்து, ஒரு array உருவாக்குக.  
+
+const items = ["dhoni", "kohli", "rohit", "rishab"];
+
+5. divக்குள் User Interaction காக, button ஒன்றை வைக்க வேண்டும்.  
+
+<button onClick ={addPlayers}>Add Players </button>
+
+6. இப்போது error வரும். returnக்கு மேலே addPlayers arrow function உருவாக்குவோம்.  
+
+const addPlayers = () => {
+	setData(items);
+};
+
+7. இப்போது setDataஇல் சேர்க்கப்பட்ட itemsஐ return பண்ண வேண்டும். 
+
+{data.length && data.map((items) => {
+	return <li>{items}</li>;
+	})}
+ 
+என்பதை buttonக்கு மேல் சேர்த்துக் கொள்க.  
+
+return
+(
+<div> UseStateArray
+<br> </br>
+{data.length && data.map((items) => {
+	return <li>{items}</li>;
+	})}
+
+8. இப்போது arrayஇல் இன்னோர் itemஐச் சேர்க்க என்ன செய்ய வேண்டும்?  
+
+<button onClick ={addOnePlayer}>Add One More Player </button> 
+எனச் சேர்க்க.  
+
+9.addOnePlayer என ஒரு function தேவையல்லவா?
+
+const addOnePlayer = () => {
+	const bowler = ["natarajan"]; 
+	setData(bowler)
+};
+
+10.	setData(bowler) எனக் கொடுத்தால் பழைய தகவல்கள் arrayஇல் அழிந்து விடும்.  
+
+11. இதைச் சரி செய்வது எப்படி?
+setData([...data, bowler]) என மாற்ற வேண்டும்.  இங்கு, ... என்பது spread operator.  [dataஇன் copyஐ எடுத்து வைக்கும்]
