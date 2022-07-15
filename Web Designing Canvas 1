@@ -1,0 +1,343 @@
+HTML Canvas: 
+
+Canvas, img போலத்தான் இருக்கும்.  ஆனால், 
+1) src, alt இருக்காது.  width, height இருக்கும்.  
+2) width, height  இரண்டுமே optional தான்.  
+3) default 300 pixels wide and 150 pixels high.  
+4) </canvas> கட்டாயம் கொடுக்க வேண்டும்.  
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="100"
+style="border:1px solid #000000;">
+</canvas>
+
+</body>
+</html>
+
+Fallback Content கொடுக்கலாம்.  பழைய உலாவிகளில் பயன்படும்.  
+
+<canvas id="stockGraph" width="150" height="150">
+  இது தான் Fallback Content
+</canvas>
+
+
+<canvas id="clock" width="150" height="150">
+  <img src="images/clock.png" width="150" height="150" alt=""/>
+</canvas>
+
+எடுத்துக்காட்டு: 
+index2.html: 
+===========
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Canvas tutorial</title>
+	 	  <script type="text/javascript" src="demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+
+  </head>
+  <body onload="draw();">
+    <canvas id="payilagam" width="150" height="150"></canvas>
+  </body>
+</html>
+
+
+demo.js: 
+-------
+function draw() 
+{
+ const canvas = document.getElementById('payilagam');
+        if (canvas.getContext) {
+          const ctx = canvas.getContext('2d');
+        alert(ctx)
+        }
+      }
+
+layout.css:
+----------
+canvas { border: 1px solid black; }
+
+
+இங்கே இருக்கும் getContext தான் முதன்மையான function.  இது தான் rendering contextஐயும் அங்கே வரையத் தேவைப்படும் functionsஐயும் எடுக்கும்.  
+
+எ.கா 2: செவ்வகம்
+
+index2.html: 
+===========
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+   <script type="text/javascript" src="demo.js"></script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+ </body>
+</html>
+
+
+
+demo.js: 
+--------
+  function draw() {
+      const canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(10, 10, 50, 50);
+
+        ctx.fillStyle = 'rgba(0, 0, 200, 1)';
+        ctx.fillRect(30, 30, 50, 50);
+      }
+    }
+
+குறிப்பு: rgba - a--> alpha - opacity of the color.  
+
+எ.கா. 3: செவ்வகம்
+------
+demo.js: 
+-------
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillRect(25, 25, 100, 100);
+    ctx.clearRect(45, 45, 60, 60);
+    ctx.strokeRect(50, 50, 50, 50);
+  }
+}
+
+fillRect(x, y, width, height) -> x --> இடப்பக்கத்தில் இருந்து தொலைவு, y - உச்சியில் இருந்து தொலைவு, fillRect - செவ்வகத்தை நிரப்பும். 
+clearRect(x, y, width, height) --> சொல்லப்பட்டிருக்கும் இடத்தை நடுவில் இருந்து வெறுமையாக்கும்.  
+
+strokeRect(x, y, width, height)--> செவ்வக வெளிக்கோட்டை(outline)த் தரும்.  
+
+எ.கா. 4: 
+---------------
+demo.js: 
+--------
+function draw() {
+
+const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+
+ctx.moveTo(50,50);
+ctx.lineTo(200,100);
+ctx.stroke();
+  }
+}
+
+moveTo(75,50) --> இடப்பக்கம், மேல் இருந்து cursor எங்கே இருக்க வேண்டும்.  
+lineTo(200,100) --> xஇல் 200, yஇல் 100 வரை
+stroke() --> கோடு போடும். 
+
+எ.கா. 5:  முக்கோணம்
+demo.js: 
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(75, 50);
+    ctx.lineTo(75, 100);
+    
+    ctx.stroke();
+	  ctx.lineTo(25, 100);
+	  ctx.stroke();
+	  ctx.fill()
+  }
+}
+
+எ.கா 6: 
+demo.js: 
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(75, 50);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 25);
+    //ctx.shadowBlur = 20;
+    //ctx.shadowColor = "red";
+    ctx.fill();
+  }
+}
+
+எ.கா. 7:  வட்டம்
+demo.js: 
+-------
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+     const ctx = canvas.getContext('2d');
+
+   ctx.beginPath();
+	ctx.arc(95, 50, 40, 1,0);
+    ctx.arc(95, 50, 40, 0, 2);
+	  
+    ctx.stroke(); 
+  }
+}
+
+
+
+எ.கா. 8: வட்டம்: 
+
+demo.js: 
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+     const ctx = canvas.getContext('2d');
+
+   ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    //ctx.shadowBlur = 20;
+    //ctx.shadowColor = "red";
+    ctx.fill(); 
+  }
+}
+குறிப்பு: arc(95, 50, 40, 0, 2 * Math.PI); இதில் 95 - x, 50 - y, 40 - radius(ஆரம்), 0 --> startangle, 2 * Math.PI --> endangle
+
+
+எ.கா. 9: Smiley:
+demo.js: 
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+     const ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+    ctx.moveTo(110, 75);
+    ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+    ctx.moveTo(65, 65);
+    ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+    ctx.moveTo(95, 65);
+    ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+    ctx.stroke();
+  }
+}
+
+
+எ.கா. 10: 
+demo.js: 
+
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+
+ // Filled triangle
+    ctx.beginPath();
+    ctx.moveTo(25, 25);
+    ctx.lineTo(105, 25);// xஇல் 105 வரை, yஇல் 25இலேயே 
+    ctx.lineTo(25, 105);// xஇல் 25இலேயே, yஇல் 105 வரை
+//ctx.fillStyle = "red"; முயன்று பாருங்கள்.  
+    ctx.fill();
+
+
+
+    // Stroked triangle
+    ctx.beginPath();
+    ctx.moveTo(125, 125);
+    ctx.lineTo(125, 45);
+    ctx.lineTo(45, 125);
+    ctx.closePath();
+//ctx.strokeStyle = "#FF0000"; முயன்று பாருங்கள்.  
+    ctx.stroke();
+  }
+}
+
+எ.கா. 11: அரை வட்டம்
+demo.js: 
+
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+     const ctx = canvas.getContext('2d');
+
+   ctx.beginPath();
+    ctx.arc(95, 50, 40, 0,  Math.PI);
+    ctx.shadowBlur = 20;
+  ctx.fillStyle = "purple";
+    ctx.fill(); 
+  }
+}
+
+எ.கா 12: 
+demo.js: 
+
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+     const ctx = canvas.getContext('2d');
+
+ ctx.font = "30px Arial";
+ctx.fillText("Payilagam HTML Canvas", 10, 50);
+    ctx.fill(); 
+  }
+}
+
+மேல் உள்ளதில் fillTextக்கு மாற்றாக ctx.strokeText("Hello World", 10, 50); கொடுத்துப் பாருங்கள்.  
+
+
+
+எ.கா 12: 
+demo.js
+
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+
+    // Quadratic curves example
+ctx.beginPath();
+ctx.moveTo(20, 20);
+ctx.quadraticCurveTo(20, 100, 200, 20);
+ctx.stroke(); 
+  }
+}
+
+quadraticCurveTo(cp1x, cp1y, x, y)
+
+x - x அச்சில் புள்ளி, y - y அச்சில் புள்ளி 
+cp1x - x அச்சுக்கான கட்டுப்பாட்டுப் புள்ளி 
+cp1y - y அச்சுக்கான கட்டுப்பாட்டுப் புள்ளி. 
+
+
+
+
+
+
+
+எ.கா 13: 
+demo.js: 
+
+function draw() {
+  const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+
+    // Quadratic curves example
+    ctx.beginPath();
+    ctx.moveTo(75, 25);
+    ctx.quadraticCurveTo(25, 25, 25, 62.5);
+    ctx.quadraticCurveTo(25, 100, 50, 100);
+    ctx.quadraticCurveTo(50, 120, 30, 125);
+    ctx.quadraticCurveTo(60, 120, 65, 100);
+    ctx.quadraticCurveTo(125, 100, 125, 62.5);
+    ctx.quadraticCurveTo(125, 25, 75, 25);
+    ctx.stroke();
+  }
+}
