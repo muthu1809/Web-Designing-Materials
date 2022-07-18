@@ -1,0 +1,196 @@
+முதலில் 
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+   <script type="text/javascript" src="demo.js"></script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+ </body>
+</html>
+
+demo.js: 
+--------- 
+function demo() {
+   const canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+     const ctx = canvas.getContext('2d');
+}
+}
+    
+alert(canvas) ஐ நீக்கி விட்டு:  [எல்லாமே ifக்குள்]
+canvas.width = window.innerWidth
+alert(canvas)
+
+alert(canvas) ஐ நீக்கி விட்டு: 
+    canvas.width = innerWidth
+    canvas.height = innerHeight
+    alert(canvas.height)
+
+இப்போது,  Player ஐ உருவாக்குவோம்.  
+class Player
+{
+constructor(x,y, radius, color)
+{
+    this.x = x
+    this.y = y
+    this.radius = radius
+    this.color = color
+}
+}
+
+const player = new Player(100, 100,30, 'blue')
+
+இப்போது classக்குள், constructorக்கு வெளியே
+draw()
+{
+    ctx.beginPath()
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+    ctx.fillStyle = this.color
+    ctx.fill()
+}
+
+இப்படிக் கொடுத்த பிறகு, playerஐ வைத்து draw()ஐக் கூப்பிட வேண்டும்.  player வரிக்குக் கீழ், 
+player.draw(); 
+
+இப்போது உருவாகியிருக்கும் நீல வட்டத்தை நடுவில் கொண்டு வர, const player = new Player() வரிக்கு மேல், 
+const x = canvas.width/2
+const y = canvas.height/2
+
+இந்த x,yஐ, 
+const player = new Player(100, 100,30, 'blue') வரியில் மாற்றுக, 
+const player = new Player(x, y,30, 'blue')
+
+இப்போது projectile உருவாக்க வேண்டும்.  அதற்கு const y வரிக்குக் கீழ், இன்னொரு class உருவாக்குங்கள்.  
+class Projectile{
+    constructor(x,y, radius, color, velocity) // velocity - movementக்காக
+{
+    this.x = x
+    this.y = y
+    this.radius = radius
+    this.color = color
+    this.velocity = velocity
+    }
+}
+
+இப்போது மேலே இருக்கும் draw function இங்கும் தேவை அல்லவா? அதைப் படி எடுத்து, class Projectileஇல் சேர்க்கவும்.  
+draw()
+{
+    ctx.beginPath()
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
+    ctx.fillStyle = this.color
+    ctx.fill()
+}
+
+projectile வேலை செய்ய ஒவ்வொரு முறையும் நாம் சொடுக்குவோம் அல்லவா?  அது தான் event.  அதைக் கவனிக்க, addEventListener சேர்க்க வேண்டும். 
+player.draw() வரிக்குக் கீழ், 
+addEventListener('click', () => {   alert('Hi')}) சேர்க்க.  
+
+இந்த addEventListenerஇல் projectileஇன் instanceஐயும் அதை mouse clickஉடன் சேர்க்கும் eventஐயும் சேர்க்க வேண்டும்.  
+addEventListener('click', (event) => { 
+   // alert(event)  alert(event.clientX) alert(event.clientY) கொடுத்துப் பார்க்க.  
+   const projectile = new Projectile()
+    })
+
+இப்போது கிடைக்கும் clientX, clientYஐ projectile instanceஇன் argumentsஆகச் செலுத்துக.  
+addEventListener('click', (event) => { 
+   // alert(event)  alert(event.clientX) alert(event.clientY) கொடுத்துப் பார்க்க.  
+   const projectile = new Projectile(event.clientX, event.clientY,10, 'red', null)
+    })
+
+இதைத் தொடர்ந்து வரும் அடுத்த வரியில் projectile.draw() எனக் கூப்பிடுக.  
+addEventListener('click', (event) => { 
+      const projectile = new Projectile(event.clientX, event.clientY,10, 'red', null)
+projectile.draw() 
+    })
+
+இப்போது வரும் புள்ளிகள் எல்லா இடங்களிலும் இருக்கின்றன.  ஆனால் இவை நீல வட்டத்தின் மையப்புள்ளியில் இருந்து தொடங்கினால் போதும்.  அதை எப்படிச் செய்வது?
+canvas.width/2, canvas.height/2 என மாற்றினால் போதும்.  
+addEventListener('click', (event) => { 
+      const projectile = new Projectile(canvas.width/2, canvas.height/2,10, 'red', null)
+projectile.draw() 
+    })
+
+இப்போது animationஐ எப்படிச் சேர்ப்பது? player.draw()க்கு அடுத்த வரியில் கீழ் உள்ளதைச் சேர்க்க. 
+function animate()
+{
+requestAnimationFrame(animate)
+}
+
+அதன் பிறகு, Projectile classஇல் update() சேர்க்க.  
+update()
+{
+    this.x = this.x + this.velocity.x
+    this.y = this.y + this.velocity.y
+}
+
+ஆனால், இதுவரை velocity ஐ null என்றே addEventListenerஇல் வைத்திருக்கிறோம்.  அதை நீக்கி விட்டு, ஜாவாஸ்கிரிப்ட் ஆப்ஜெக்ட் உருவாக்கிக் கொள்ளலாம். 
+
+addEventListener('click', (event) => { 
+   // alert(event)  alert(event.clientX) alert(event.clientY) கொடுத்துப் பார்க்க.  
+   const projectile = new Projectile(canvas.width/2, canvas.height/2,10, 'red', 
+    {
+    x:1,
+    y:1
+    })
+    })
+
+இப்போது draw(), update() இரண்டு functionஐயும் animate() functionஇல் இருந்து கூப்பிடுக.  அதற்கு முன்பு, animate functionக்கு முன்பு,  projectile referenceஐச் சேர்க்க.  
+ const projectile = new Projectile(canvas.width/2, canvas.height/2,10, 'red', 
+    {
+    x:1,
+    y:1
+    })
+projectile.draw()
+projectile.update()
+
+
+ifஇன் கடைசி வரியில் animate()ஐக் கூப்பிடுக.  
+
+இப்போது இதே போல நிறைய கோடுகள்(projectiles) கொண்டு வர என்ன செய்வது? 
+projectiles arrayஐ player.draw() வரிக்குக் கீழ் உருவாக்குவோம்.  
+const projectiles = []
+
+projectiles array உருவாக்கினால் நிறைய projectile instance வேண்டுமே! கீழ் உள்ளது போல, நிறைய instance உருவாக்குவோம். 
+ const projectile2 = new Projectile(canvas.width/2, canvas.height/2,10, 'blue', 
+    {
+    x:1,
+    y:1
+    })
+ const projectile3 = new Projectile(canvas.width/2, canvas.height/2,10, 'green', 
+    {
+    x:1,
+    y:1
+    })
+ const projectile4 = new Projectile(canvas.width/2, canvas.height/2,10, 'yellow', 
+    {
+    x:1,
+    y:1
+    })
+ const projectile5 = new Projectile(canvas.width/2, canvas.height/2,10, 'pink', 
+    {
+    x:1,
+    y:1
+    })
+
+இந்த 
+இப்படி நிறைய projectile instance உருவாக்கிய பிறகு, animate() functionஐக் கீழ் உள்ளது போல மாற்றி விடுவோம்.  
+function animate()
+{
+requestAnimationFrame(animate)
+projectiles.forEach((projectile) => 
+{
+projectile.update()
+})
+}
+
+மறக்காமல் update() functionக்குள் இருந்து, this.draw()ஐக் கூப்பிடுக.  
+
+update()
+{
+    this.draw()
+    this.x = this.x + this.velocity.x
+    this.y = this.y + this.velocity.y
+}
+
