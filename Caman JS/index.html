@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js" ></script>
+ <script type="text/javascript" src="demo.js"></script>
+    <link rel="stylesheet" href="style.css">
+     
+<title> Image Filter </title>
+ </head>
+ <body onload="demo();">
+<h1><a href="#" class="image"> Image Filter App </a> </h1>
+Choose Image  <input type="file" id = "upload-file" class="file-up">  </input>
+
+<canvas id="canvas"> </canvas>
+
+
+<div class="Filters">
+<h1> Filters </h1>
+<h3> Brightness </h3>
+<button = "increaseB" class="filter-btn increase_bright"> Increase + </button>
+<button = "decreaseB" class="filter-btn decrease_bright"> Decrease - </button>
+<h3> Contrast </h3>
+<button = "increaseC" class="filter-btn increase_contrast"> Increase + </button>
+<button = "decreaseC" class="filter-btn decrease_contrast"> Decrease - </button>
+<h3> Saturation </h3>
+<button = "increaseS" class="filter-btn increase_saturation"> Increase + </button>
+<button = "decreaseS" class="filter-btn decrease_saturation"> Decrease - </button>
+
+</div>
+<div class="Effects">
+<h1> Effects </h1>
+
+<button = "vintage" class="filter-btn vintage"> Vintage </button>
+<button = "lomo" class="filter-btn lomo"> Lomo </button>
+<button = "clarity" class="filter-btn vintage"> Clarity </button>
+<button = "sincity" class="filter-btn lomo"> Sin City </button>
+
+</div>
+
+
+<br> <br>
+<button id="download-btn" class="download-button"> Download Photo</button>
+
+<button id="remove-btn" class="removeBtn"> Remove Filters</button>
+
+
+
+ </body>
+</html>
