@@ -228,7 +228,7 @@ export default Mobiles
 
 7. இந்த htmlஐ JSXஆக மாற்ற வேண்டும்.  styleஇல் {{}}, imgஐ மூடுவது, 
 
-<div class="card" style={{"width: 18rem;"}}>
+<div class="card" style={{width: "18rem"}}>
   <img src="..." class="card-img-top" alt="..."/>
   <div class="card-body">
     <h5 class="card-title">Samsung</h5>
